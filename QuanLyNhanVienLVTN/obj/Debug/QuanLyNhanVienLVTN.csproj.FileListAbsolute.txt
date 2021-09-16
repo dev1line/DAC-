@@ -1,0 +1,197 @@
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.exe
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.pdb
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.BonusSkins.v21.1.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.Desktop.v21.1.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.v21.1.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Printing.v21.1.Core.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Sparkline.v21.1.Core.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Utils.v21.1.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraEditors.v21.1.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Core.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Drawing.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.Desktop.v21.1.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.v21.1.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Utils.v21.1.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Sparkline.v21.1.Core.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraEditors.v21.1.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Printing.v21.1.Core.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Core.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Drawing.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Data.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Data.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Data.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Data.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Utils.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Utils.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Utils.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Utils.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Sparkline.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Sparkline.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Sparkline.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Sparkline.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.XtraEditors.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.XtraEditors.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.XtraEditors.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.XtraEditors.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Printing.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Printing.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Printing.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Printing.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Pdf.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Pdf.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Pdf.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Pdf.v21.1.Core.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Login.resources
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.exe
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.pdb
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.fTableManager.resources
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.exe.licenses
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Xpo.v21.1.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraBars.v21.1.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Xpo.v21.1.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraBars.v21.1.xml
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Xpo.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Xpo.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Xpo.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Xpo.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.XtraBars.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.XtraBars.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.XtraBars.v21.1.resources.dll
+c:\users\admin\documents\visual studio 2015\Projects\QuanLyNhanVienLVTN\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.XtraBars.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.exe.config
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.exe
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.pdb
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.exe
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.pdb
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.BonusSkins.v21.1.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.Desktop.v21.1.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.v21.1.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Printing.v21.1.Core.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Sparkline.v21.1.Core.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Utils.v21.1.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Xpo.v21.1.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraBars.v21.1.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraEditors.v21.1.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Core.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Drawing.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.Desktop.v21.1.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.v21.1.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Utils.v21.1.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Sparkline.v21.1.Core.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Xpo.v21.1.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraBars.v21.1.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraEditors.v21.1.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Printing.v21.1.Core.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Core.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Drawing.xml
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Data.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Data.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Data.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Data.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Utils.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Utils.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Utils.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Utils.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Sparkline.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Sparkline.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Sparkline.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Sparkline.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Xpo.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Xpo.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Xpo.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Xpo.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.XtraBars.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.XtraBars.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.XtraBars.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.XtraBars.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.XtraEditors.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.XtraEditors.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.XtraEditors.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.XtraEditors.v21.1.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Printing.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Printing.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Printing.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Printing.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Pdf.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Pdf.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Pdf.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Pdf.v21.1.Core.resources.dll
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csprojResolveAssemblyReference.cache
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Login.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Properties.Resources.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.GenerateResource.Cache
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.exe.licenses
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.fAccountProfile.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.LichLamViec.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.QuanLyLichLamViec.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.BaoCao.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Danhsachnhanvien.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.lsvLenLich.resources
+C:\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.QuanLy.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.exe.config
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.exe
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.pdb
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Core.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Drawing.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.Desktop.v21.1.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Data.v21.1.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Utils.v21.1.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Sparkline.v21.1.Core.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Xpo.v21.1.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraBars.v21.1.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.XtraEditors.v21.1.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Printing.v21.1.Core.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Core.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\DevExpress.Pdf.v21.1.Drawing.xml
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Data.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Data.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Data.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Data.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Utils.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Utils.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Utils.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Utils.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Sparkline.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Sparkline.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Sparkline.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Sparkline.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Xpo.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Xpo.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Xpo.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Xpo.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.XtraBars.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.XtraBars.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.XtraBars.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.XtraBars.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.XtraEditors.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.XtraEditors.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.XtraEditors.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.XtraEditors.v21.1.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Printing.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Printing.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Printing.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Printing.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\de\DevExpress.Pdf.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\es\DevExpress.Pdf.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ja\DevExpress.Pdf.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\bin\Debug\ru\DevExpress.Pdf.v21.1.Core.resources.dll
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.AssemblyReference.cache
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.BaoCao.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Danhsachnhanvien.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.fAccountProfile.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.lsvLenLich.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.LichLamViec.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Login.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.Properties.Resources.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.QuanLy.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.QuanLyLichLamViec.resources
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.GenerateResource.cache
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.exe.licenses
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.CoreCompileInputs.cache
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.CopyComplete
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.exe
+D:\C#_DA300\Thảo\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.pdb
