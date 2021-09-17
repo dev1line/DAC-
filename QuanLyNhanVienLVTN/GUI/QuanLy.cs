@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,18 +20,41 @@ namespace QuanLyNhanVienLVTN
             InitializeComponent();
             QuanLyWO();
             QuanLyTaiKhoanDangNhap();
-        }
+            SoHieuMayBay();
+            Nhom();
+            if (BLL.BLL_Handler.role == "adminroster")
+            {
+                tabControl1.SelectedIndex = 0;
 
-        private void QuanLyWO()
+                tabControl1.TabPages.Remove(tabPage2);
+            } else
+            {
+                tabControl1.SelectedIndex = 1;
+ 
+                tabControl1.TabPages.Remove(tabPage1);
+            }
+
+        }
+        private void SoHieuMayBay()
+        {
+            dataGridViewSHMB.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewSHMB.ReadOnly = true;
+            dataGridViewSHMB.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+            private void QuanLyWO()
         {
             dtgvQuanLyWO.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvQuanLyWO.ReadOnly = true;
             dtgvQuanLyWO.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
-            string query = "select WO.ID,SoHieuMayBay.AC,WO.manoidung,WO.Noidung,WO.ChungChi,WO.Dungcu from WO inner join SoHieuMayBay on WO.AcID = SoHieuMayBay.ID";
-           dtgvQuanLyWO.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
+            int j = 0;
+            foreach (DataRow i in BLL.BLL_Handler.Instance.getAllSHMB().Rows)
+            {
+                j++;
+                comboBoxAC.Items.Add(new DTO.CBBItems { Key = j, Value = i.Field<string>("AC") });
+            }
+            comboBoxAC.SelectedIndex = 1;
         }
 
 
@@ -48,9 +72,19 @@ namespace QuanLyNhanVienLVTN
             comboBoxRole.SelectedIndex = 2;
         }
 
+        private void Nhom()
+        {
+            dataGridViewNHOM.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewNHOM.ReadOnly = true;
+            dataGridViewNHOM.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
         public void show(string search)
         {
             dtgvTkDangNhap.DataSource = BLL.BLL_Handler.Instance.getAlltkDangNhap(search);
+            dtgvQuanLyWO.DataSource = BLL.BLL_Handler.Instance.getAllQLWO(search);
+            dataGridViewSHMB.DataSource = BLL.BLL_Handler.Instance.getAllSHMB();
+            dataGridViewNHOM.DataSource = BLL.BLL_Handler.Instance.getAllNHOM();
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -226,14 +260,173 @@ namespace QuanLyNhanVienLVTN
         private void buttonXoa_Click(object sender, EventArgs e)
         {
             if (itemRow != null)
-            {
+            { 
+                try
+                {
+                    BLL.BLL_Handler.Instance.DeltkDangNhap((string)itemRow.Cells[0].Value);
+                }
+                catch (SqlException ex) when (ex.Number == 547)
+                {
 
-                BLL.BLL_Handler.Instance.DeltkDangNhap((string)itemRow.Cells[0].Value);
+                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                }
                 show("");
             }
             else
             {
                 MessageBox.Show("You should choose one record to Delete it !");
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (textBoxCC.Text != "" && richTextBoxDC.Text != "" && richTextBoxND.Text != "" && textBoxMND.Text != "")
+            {
+                // Add
+                int AC = BLL.BLL_Handler.Instance.getACID(((DTO.CBBItems)comboBoxAC.SelectedItem).Value);
+                BLL.BLL_Handler.Instance.AddWO(AC, textBoxCC.Text, richTextBoxDC.Text, richTextBoxND.Text, textBoxMND.Text);
+                show("");
+                textBoxCC.Text = "";
+                richTextBoxDC.Text = "";
+                richTextBoxND.Text = "";
+                textBoxMND.Text = "";
+                comboBoxAC.SelectedIndex = 1;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin cần thêm !");
+            }
+        }
+
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            show(txtSearch.Text);
+        }
+
+        private void dataGridViewSHMB_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) itemRow = dataGridViewSHMB.Rows[0];
+            else itemRow = dataGridViewSHMB.Rows[e.RowIndex];
+            if (dataGridViewSHMB.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Bạn nên chọn một hàng để sửa !");
+            }
+        }
+
+        private void buttonAddSHMB_Click(object sender, EventArgs e)
+        {
+            if(textBoxSHMB.Text != "")
+            {
+                BLL.BLL_Handler.Instance.AddSHMB(textBoxSHMB.Text);
+                show("");
+                textBoxSHMB.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin !");
+            }
+        }
+
+        private void buttonDelSHMB_Click(object sender, EventArgs e)
+        {
+            if (itemRow != null)
+            {     
+                try
+                {
+                    BLL.BLL_Handler.Instance.DelSHMB((int)itemRow.Cells[0].Value);
+                }
+                catch (SqlException ex) when (ex.Number == 547)
+                {
+
+                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                }
+                show("");
+
+            }
+            else
+            {
+                MessageBox.Show("You should choose one record to Delete it !");
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (itemRow != null)
+            {
+               
+                try
+                {
+                    BLL.BLL_Handler.Instance.DelWO((int)itemRow.Cells[0].Value);    
+                }
+                catch (SqlException ex) when (ex.Number == 547)
+                {
+
+                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                }
+                show("");
+
+            }
+            else
+            {
+                MessageBox.Show("You should choose one record to Delete it !");
+            }
+        }
+
+        private void dtgvQuanLyWO_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) itemRow = dtgvQuanLyWO.Rows[0];
+            else itemRow = dtgvQuanLyWO.Rows[e.RowIndex];
+            if (dtgvQuanLyWO.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Bạn nên chọn một hàng để sửa !");
+            }
+        }
+
+        private void buttonThemNhom_Click(object sender, EventArgs e)
+        {
+            if (textBoxNhom.Text != "")
+            {
+                BLL.BLL_Handler.Instance.AddNhom(textBoxNhom.Text);
+                show("");
+                textBoxSHMB.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin !");
+            }
+        }
+
+        private void buttonXoaNhom_Click(object sender, EventArgs e)
+        {
+            if (itemRow != null)
+            {
+
+                try
+                {
+                    BLL.BLL_Handler.Instance.DelNhom((int)itemRow.Cells[0].Value);
+                } catch (SqlException ex) when (ex.Number == 547)
+                {
+                   
+                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                }
+                show("");
+
+            }
+            else
+            {
+                MessageBox.Show("You should choose one record to Delete it !");
+            }
+        }
+
+        private void dataGridViewNHOM_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) itemRow = dataGridViewNHOM.Rows[0];
+            else itemRow = dataGridViewNHOM.Rows[e.RowIndex];
+            if (dataGridViewNHOM.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Bạn nên chọn một hàng để sửa !");
             }
         }
     }

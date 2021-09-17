@@ -31,7 +31,7 @@ namespace QuanLyNhanVienLVTN
                         buttonGBC.Enabled = false;
                         break;
                     }
-                case "admincc":
+                case "adminmcc":
                     {
                         buttonGBC.Enabled = false;
                         buttonTTNV.Enabled = false;
@@ -94,7 +94,7 @@ namespace QuanLyNhanVienLVTN
 
         private void QuanLyLichLamViec_FormClosed(object sender, FormClosedEventArgs e)
         {
-            mylogin.Close();
+            mylogin.Show();
         }
     }
 }
