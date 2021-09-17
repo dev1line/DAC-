@@ -60,17 +60,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao.cs">
+    <Compile Include="BLL\BLL_Handler.cs" />
+    <Compile Include="DTO\CBBItems.cs" />
+    <Compile Include="DTO\TKDN.cs" />
+    <Compile Include="DTO\TTDNInfo.cs" />
+    <Compile Include="GUI\BaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao.Designer.cs">
+    <Compile Include="GUI\BaoCao.Designer.cs">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cons.cs" />
-    <Compile Include="Danhsachnhanvien.cs">
+    <Compile Include="DTO\Cons.cs" />
+    <Compile Include="GUI\Danhsachnhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Danhsachnhanvien.Designer.cs">
+    <Compile Include="GUI\Danhsachnhanvien.Designer.cs">
       <DependentUpon>Danhsachnhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\DataProvider.cs" />
@@ -79,65 +83,64 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="fAccountProfile.cs">
+    <Compile Include="GUI\fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAccountProfile.Designer.cs">
+    <Compile Include="GUI\fAccountProfile.Designer.cs">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="LenLich.cs">
+    <Compile Include="GUI\LenLich.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LenLich.Designer.cs">
+    <Compile Include="GUI\LenLich.Designer.cs">
       <DependentUpon>LenLich.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="LichLamViec.cs">
+    <Compile Include="GUI\LichLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LichLamViec.Designer.cs">
+    <Compile Include="GUI\LichLamViec.Designer.cs">
       <DependentUpon>LichLamViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlanData.cs" />
-    <Compile Include="Planitem.cs" />
+    <Compile Include="DTO\PlanData.cs" />
+    <Compile Include="DTO\Planitem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLy.cs">
+    <Compile Include="GUI\QuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLy.Designer.cs">
+    <Compile Include="GUI\QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyLichLamViec.cs">
+    <Compile Include="GUI\QuanLyLichLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyLichLamViec.Designer.cs">
+    <Compile Include="GUI\QuanLyLichLamViec.Designer.cs">
       <DependentUpon>QuanLyLichLamViec.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaoCao.resx">
+    <EmbeddedResource Include="GUI\BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Danhsachnhanvien.resx">
+    <EmbeddedResource Include="GUI\Danhsachnhanvien.resx">
       <DependentUpon>Danhsachnhanvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAccountProfile.resx">
+    <EmbeddedResource Include="GUI\fAccountProfile.resx">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LenLich.resx">
+    <EmbeddedResource Include="GUI\LenLich.resx">
       <DependentUpon>LenLich.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LichLamViec.resx">
+    <EmbeddedResource Include="GUI\LichLamViec.resx">
       <DependentUpon>LichLamViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -147,10 +150,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLy.resx">
+    <EmbeddedResource Include="GUI\QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyLichLamViec.resx">
+    <EmbeddedResource Include="GUI\QuanLyLichLamViec.resx">
       <DependentUpon>QuanLyLichLamViec.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
@@ -175,9 +178,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
