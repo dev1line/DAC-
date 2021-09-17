@@ -1,0 +1,11 @@
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.BaoCao.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.Danhsachnhanvien.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.fAccountProfile.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.lsvLenLich.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.LichLamViec.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.Login.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.Properties.Resources.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.QuanLy.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.QuanLyLichLamViec.resources
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.csproj.GenerateResource.cache
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Release\QuanLyNhanVienLVTN.exe.licenses
