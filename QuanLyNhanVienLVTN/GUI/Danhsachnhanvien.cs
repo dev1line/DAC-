@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using DevExpress.Data.Async;
 using System.Collections.ObjectModel;
 using DevExpress.XtraEditors.Filtering.Templates;
+using static DevExpress.XtraPrinting.Native.ExportOptionsPropertiesNames;
 
 namespace QuanLyNhanVienLVTN
 {
@@ -23,6 +24,16 @@ namespace QuanLyNhanVienLVTN
             InitializeComponent();
 
             ThongTin();
+
+            if(BLL.BLL_Handler.role != "adminroster")
+            {
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
+                btnSua.BackColor = btnThem.BackColor = btnXoa.BackColor = Color.Gray;
+
+                txbCC.ReadOnly = txbEml.ReadOnly = txbSDT.ReadOnly = txbTen.ReadOnly = true;
+                ngayhethan.Enabled = comboBoxNhom.Enabled = false;
+            }
+
         }
 
         void ThongTin()
@@ -30,6 +41,11 @@ namespace QuanLyNhanVienLVTN
             dtgvThongTinNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvThongTinNhanVien.ReadOnly = true;
             dtgvThongTinNhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            /*if (dtgvThongTinNhanVien.RowCount > 0 && (int)dtgvThongTinNhanVien.Rows[0].Cells[0].Value == 3)
+            {
+                dtgvThongTinNhanVien.Rows[0]DefaultCellStyle.BackColor = Color.Black;
+            }*/
+            
             int j = 0;
           foreach(DataRow i in BLL.BLL_Handler.Instance.getAllNHOM().Rows)
             {
@@ -41,6 +57,26 @@ namespace QuanLyNhanVienLVTN
         private void Show(string search)
         {
             dtgvThongTinNhanVien.DataSource = BLL.BLL_Handler.Instance.getAllTTNV(search);
+            try
+            {
+
+                if (dtgvThongTinNhanVien.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in dtgvThongTinNhanVien.Rows)
+                    {
+                        if (Convert.ToDateTime(row.Cells[3].Value).Date < DateTime.Now.Date)
+                        {
+                            row.DefaultCellStyle.BackColor = Color.Red;
+                        }
+                    }
+                }
+
+            }
+            catch (SqlException ex) when (ex.Number == 547)
+            {
+                throw;
+            }
+           
         }
         private void Danhsachnhanvien_Load(object sender, EventArgs e)
         {
@@ -57,7 +93,7 @@ namespace QuanLyNhanVienLVTN
             if(txbCC.Text != "" && txbEml.Text != "" && txbSDT.Text != "" && txbTen.Text != "")
             {
                 int ma = BLL.BLL_Handler.Instance.getNhomID(((DTO.CBBItems)comboBoxNhom.SelectedItem).Value);
-                BLL.BLL_Handler.Instance.AddTTNV(ma, txbCC.Text, txbEml.Text, Convert.ToInt32(txbSDT.Text), txbTen.Text);
+                BLL.BLL_Handler.Instance.AddTTNV(ma, txbCC.Text, txbEml.Text, Convert.ToDouble(txbSDT.Text), txbTen.Text, Convert.ToDateTime(ngayhethan.Value).ToString("yyMMdd"));
                 Show("");
                 txbCC.Text = "";
                 txbEml.Text = "";
@@ -97,7 +133,7 @@ namespace QuanLyNhanVienLVTN
                 
                 if (txbCC.Text != "" && txbEml.Text != "" && txbSDT.Text != "" && txbTen.Text != "")
                 {
-                    BLL.BLL_Handler.Instance.UpdateNNTV(txbTen.Text, Convert.ToInt32(txbSDT.Text), txbEml.Text, txbCC.Text, ngayhethan.Value, ((DTO.CBBItems)comboBoxNhom.SelectedItem).Key, (int)itemRow.Cells[0].Value);
+                    BLL.BLL_Handler.Instance.UpdateNNTV(txbTen.Text, Convert.ToDouble(txbSDT.Text), txbEml.Text, txbCC.Text, Convert.ToDateTime(ngayhethan.Value).ToString("yyMMdd"), ((DTO.CBBItems)comboBoxNhom.SelectedItem).Key, (int)itemRow.Cells[0].Value);
                     Show("");
                 }
 
@@ -107,7 +143,7 @@ namespace QuanLyNhanVienLVTN
         private void dtgvThongTinNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) itemRow = dtgvThongTinNhanVien.Rows[0];
-            else
+            else if (itemRow != null)
             {
                 itemRow = dtgvThongTinNhanVien.Rows[e.RowIndex];
 
@@ -117,14 +153,6 @@ namespace QuanLyNhanVienLVTN
                 txbTen.Text = (string)itemRow.Cells[4].Value;
              
                 comboBoxNhom.SelectedIndex = comboBoxNhom.FindString((string)itemRow.Cells[1].Value);
-  
-                
-                if (itemRow.Cells[3].Value != null)
-                {
-                    ngayhethan.Value = Convert.ToDateTime(itemRow.Cells[3].Value).Date;
-                }
-
-
             } 
                 
             if (dtgvThongTinNhanVien.SelectedRows.Count > 1)

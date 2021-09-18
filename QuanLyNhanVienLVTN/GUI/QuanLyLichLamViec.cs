@@ -34,7 +34,7 @@ namespace QuanLyNhanVienLVTN
                 case "adminmcc":
                     {
                         buttonGBC.Enabled = false;
-                        buttonTTNV.Enabled = false;
+                        // buttonTTNV.Enabled = false;
                         break;
                     }
                 case "staff":

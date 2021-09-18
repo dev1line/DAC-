@@ -100,7 +100,7 @@ namespace QuanLyNhanVienLVTN.BLL
             DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         
-         public void UpdateNNTV(string ten, int sdt, string email, string cc, DateTime date, int nhom, int ma)
+         public void UpdateNNTV(string ten, double sdt, string email, string cc, string date, int nhom, int ma)
         {
             string query = $"UPDATE Danhsachnhanvien SET Name = '{ten}', Phone = {sdt}, Email = '{email}', Chungchi = '{cc}', Ngayhethanchungchi = '{date}', NhomID = {nhom} WHERE ID = {ma}";
             DAO.DataProvider.Instance.ExecuteQuery(query);
@@ -143,9 +143,9 @@ namespace QuanLyNhanVienLVTN.BLL
             return DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         
-        public DataTable AddTTNV(int ma, string CC, string email, int sdt, string ten)
+        public DataTable AddTTNV(int ma, string CC, string email, double sdt, string ten, string Ngayhethanchungchi)
         {
-            string query = $"INSERT INTO Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email) values({ma}, '{CC}','{ten}',{sdt}, '{email}')";
+            string query = $"INSERT INTO Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email, Ngayhethanchungchi) values({ma}, '{CC}','{ten}',{sdt}, '{email}', N'{Ngayhethanchungchi}')";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         public void DelWO(int ma)

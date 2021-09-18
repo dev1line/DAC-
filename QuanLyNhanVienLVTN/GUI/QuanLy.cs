@@ -27,11 +27,15 @@ namespace QuanLyNhanVienLVTN
                 tabControl1.SelectedIndex = 0;
 
                 tabControl1.TabPages.Remove(tabPage2);
+
+                tabControl1.TabPages.Remove(tabPage3);
             } else
             {
                 tabControl1.SelectedIndex = 1;
  
                 tabControl1.TabPages.Remove(tabPage1);
+
+                tabControl1.TabPages.Remove(tabPage4);
             }
 
         }
