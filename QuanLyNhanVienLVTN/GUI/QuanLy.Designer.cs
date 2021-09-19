@@ -78,13 +78,13 @@
             this.buttonDelSHMB = new System.Windows.Forms.Button();
             this.buttonAddSHMB = new System.Windows.Forms.Button();
             this.dataGridViewSHMB = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridViewNHOM = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxNhom = new System.Windows.Forms.TextBox();
-            this.buttonThemNhom = new System.Windows.Forms.Button();
             this.buttonXoaNhom = new System.Windows.Forms.Button();
+            this.buttonThemNhom = new System.Windows.Forms.Button();
+            this.textBoxNhom = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dataGridViewNHOM = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -99,9 +99,9 @@
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSHMB)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNHOM)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -285,6 +285,7 @@
             // 
             // dtgvTkDangNhap
             // 
+            this.dtgvTkDangNhap.AllowUserToAddRows = false;
             this.dtgvTkDangNhap.BackgroundColor = System.Drawing.Color.White;
             this.dtgvTkDangNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTkDangNhap.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -400,6 +401,7 @@
             // 
             // dtgvQuanLyWO
             // 
+            this.dtgvQuanLyWO.AllowUserToAddRows = false;
             this.dtgvQuanLyWO.BackgroundColor = System.Drawing.Color.White;
             this.dtgvQuanLyWO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQuanLyWO.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -641,27 +643,13 @@
             // 
             // dataGridViewSHMB
             // 
+            this.dataGridViewSHMB.AllowUserToAddRows = false;
             this.dataGridViewSHMB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSHMB.Location = new System.Drawing.Point(259, 120);
             this.dataGridViewSHMB.Name = "dataGridViewSHMB";
             this.dataGridViewSHMB.Size = new System.Drawing.Size(399, 230);
             this.dataGridViewSHMB.TabIndex = 0;
             this.dataGridViewSHMB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSHMB_CellClick);
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.tabControl1, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1334, 710);
-            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tabPage4
             // 
@@ -677,30 +665,15 @@
             this.tabPage4.Text = "Nhóm";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewNHOM
+            // buttonXoaNhom
             // 
-            this.dataGridViewNHOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewNHOM.Location = new System.Drawing.Point(595, 196);
-            this.dataGridViewNHOM.Name = "dataGridViewNHOM";
-            this.dataGridViewNHOM.Size = new System.Drawing.Size(360, 207);
-            this.dataGridViewNHOM.TabIndex = 0;
-            this.dataGridViewNHOM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNHOM_CellClick);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(249, 260);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Tên nhóm:";
-            // 
-            // textBoxNhom
-            // 
-            this.textBoxNhom.Location = new System.Drawing.Point(325, 257);
-            this.textBoxNhom.Name = "textBoxNhom";
-            this.textBoxNhom.Size = new System.Drawing.Size(214, 20);
-            this.textBoxNhom.TabIndex = 2;
+            this.buttonXoaNhom.Location = new System.Drawing.Point(464, 318);
+            this.buttonXoaNhom.Name = "buttonXoaNhom";
+            this.buttonXoaNhom.Size = new System.Drawing.Size(75, 23);
+            this.buttonXoaNhom.TabIndex = 4;
+            this.buttonXoaNhom.Text = "Xóa";
+            this.buttonXoaNhom.UseVisualStyleBackColor = true;
+            this.buttonXoaNhom.Click += new System.EventHandler(this.buttonXoaNhom_Click);
             // 
             // buttonThemNhom
             // 
@@ -712,15 +685,46 @@
             this.buttonThemNhom.UseVisualStyleBackColor = true;
             this.buttonThemNhom.Click += new System.EventHandler(this.buttonThemNhom_Click);
             // 
-            // buttonXoaNhom
+            // textBoxNhom
             // 
-            this.buttonXoaNhom.Location = new System.Drawing.Point(464, 318);
-            this.buttonXoaNhom.Name = "buttonXoaNhom";
-            this.buttonXoaNhom.Size = new System.Drawing.Size(75, 23);
-            this.buttonXoaNhom.TabIndex = 4;
-            this.buttonXoaNhom.Text = "Xóa";
-            this.buttonXoaNhom.UseVisualStyleBackColor = true;
-            this.buttonXoaNhom.Click += new System.EventHandler(this.buttonXoaNhom_Click);
+            this.textBoxNhom.Location = new System.Drawing.Point(325, 257);
+            this.textBoxNhom.Name = "textBoxNhom";
+            this.textBoxNhom.Size = new System.Drawing.Size(214, 20);
+            this.textBoxNhom.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(249, 260);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Tên nhóm:";
+            // 
+            // dataGridViewNHOM
+            // 
+            this.dataGridViewNHOM.AllowUserToAddRows = false;
+            this.dataGridViewNHOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNHOM.Location = new System.Drawing.Point(595, 196);
+            this.dataGridViewNHOM.Name = "dataGridViewNHOM";
+            this.dataGridViewNHOM.Size = new System.Drawing.Size(360, 207);
+            this.dataGridViewNHOM.TabIndex = 0;
+            this.dataGridViewNHOM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNHOM_CellClick);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.tabControl1, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1334, 710);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // QuanLy
             // 
@@ -751,10 +755,10 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSHMB)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNHOM)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

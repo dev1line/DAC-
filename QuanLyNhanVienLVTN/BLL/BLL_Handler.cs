@@ -147,6 +147,7 @@ namespace QuanLyNhanVienLVTN.BLL
         {
             string query = $"INSERT INTO Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email, Ngayhethanchungchi) values({ma}, '{CC}','{ten}',{sdt}, '{email}', N'{Ngayhethanchungchi}')";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
+            
         }
         public void DelWO(int ma)
         {
@@ -167,6 +168,74 @@ namespace QuanLyNhanVienLVTN.BLL
             }
             string query = "select Danhsachnhanvien.ID[ID],Danhsachnhom.Nhom[Nhóm],Danhsachnhanvien.ChungChi[Chứng chỉ],Danhsachnhanvien.Ngayhethanchungchi[Ngày hết hạn chứng chỉ],Danhsachnhanvien.Name[Tên nhân viên],Danhsachnhanvien.Phone[Số điện thoại],Danhsachnhanvien.Email[Email] from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable getAllLichWO(string Ngay)
+        {
+            string query = $"SELECT * from lichWO where Ngay = '{Ngay}'";
+            return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+        
+             public DataTable getAlllichLV(string Ngay)
+        {
+            string query = $"SELECT * from lichLV where Ngay = '{Ngay}'";
+            return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+        public bool AddlichWO_WO(string AC, string MND, string ND, string CC, string DC, string Ngay)
+        {
+            string query = $"INSERT INTO lichWO(AC, MaWO, noidung, Chungchi, Dungcu, Ngay ) VALUES('{AC}', '{MND}','{ND}','{CC}','{DC}', '{Ngay}')";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+        public bool AddlichWO_NV(int pos, string cc, string ten)
+        {
+            string query = $"UPDATE lichWO SET CCNV = '{cc}', NV = '{ten}' WHERE ID = {pos}";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+
+        public bool AddlichWO_GC(int pos, string gc)
+        {
+            string query = $"UPDATE lichWO SET Ghichu = '{gc}' WHERE ID = {pos}";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+        
+        public bool DellichWO_WO(int pos)
+        {
+            string query = $"DELETE from lichWO WHERE ID = {pos}";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+        public bool DellichLV(int pos)
+        {
+            string query = $"DELETE from lichLV WHERE ID = {pos}";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+        public DataTable getCaLam()
+        {
+            string query = $"select * from Calamviec";
+            return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable getlichLV_ID(int pos)
+        {
+            string query = $"select * from Calamviec where ID = {pos}";
+            return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+
+
+        public bool AddlichLV(string ca, string nhom, string chungchi, string ten, string start, string end, string Ngay)
+        {
+            Console.WriteLine(ca + nhom + chungchi + ten + start + end + Ngay);
+            string query = $"INSERT INTO lichLV (Calamviec,Nhom,Chungchi,Ten,tgcastart, tgcaend, Ngay) VALUES ('{ca}','{nhom}','{chungchi}','{ten}','{start}', '{end}', '{Ngay}')";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+        public bool AddlichLV_GC(int pos, string gc)
+        {
+            string query = $"UPDATE lichLV SET Ghichu = '{gc}' WHERE ID = {pos}";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
         }
     }
 }

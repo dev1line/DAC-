@@ -30,6 +30,10 @@
         {
             this.dtgvThongTinNhanVien = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelAction = new System.Windows.Forms.Label();
+            this.comboBoxNhom = new System.Windows.Forms.ComboBox();
+            this.txbTim = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,12 +50,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txbTim = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxNhom = new System.Windows.Forms.ComboBox();
-            this.labelAction = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThongTinNhanVien)).BeginInit();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -60,14 +60,16 @@
             // 
             // dtgvThongTinNhanVien
             // 
+            this.dtgvThongTinNhanVien.AllowUserToAddRows = false;
             this.dtgvThongTinNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dtgvThongTinNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvThongTinNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvThongTinNhanVien.Location = new System.Drawing.Point(443, 3);
             this.dtgvThongTinNhanVien.Name = "dtgvThongTinNhanVien";
-            this.dtgvThongTinNhanVien.Size = new System.Drawing.Size(889, 682);
+            this.dtgvThongTinNhanVien.Size = new System.Drawing.Size(889, 681);
             this.dtgvThongTinNhanVien.TabIndex = 0;
             this.dtgvThongTinNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvThongTinNhanVien_CellClick);
+            this.dtgvThongTinNhanVien.Sorted += new System.EventHandler(this.dtgvThongTinNhanVien_Sorted);
             // 
             // panel3
             // 
@@ -93,8 +95,47 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(434, 682);
+            this.panel3.Size = new System.Drawing.Size(434, 681);
             this.panel3.TabIndex = 10;
+            // 
+            // labelAction
+            // 
+            this.labelAction.AutoSize = true;
+            this.labelAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.labelAction.Location = new System.Drawing.Point(178, 165);
+            this.labelAction.Name = "labelAction";
+            this.labelAction.Size = new System.Drawing.Size(84, 29);
+            this.labelAction.TabIndex = 30;
+            this.labelAction.Text = "Action";
+            // 
+            // comboBoxNhom
+            // 
+            this.comboBoxNhom.FormattingEnabled = true;
+            this.comboBoxNhom.Location = new System.Drawing.Point(149, 234);
+            this.comboBoxNhom.Name = "comboBoxNhom";
+            this.comboBoxNhom.Size = new System.Drawing.Size(259, 21);
+            this.comboBoxNhom.TabIndex = 27;
+            // 
+            // txbTim
+            // 
+            this.txbTim.Location = new System.Drawing.Point(19, 31);
+            this.txbTim.Name = "txbTim";
+            this.txbTim.Size = new System.Drawing.Size(230, 20);
+            this.txbTim.TabIndex = 0;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Yellow;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
+            this.btnTimKiem.Location = new System.Drawing.Point(291, 23);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(114, 35);
+            this.btnTimKiem.TabIndex = 1;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnSua
             // 
@@ -249,27 +290,6 @@
             this.panel2.Size = new System.Drawing.Size(1310, 1);
             this.panel2.TabIndex = 9;
             // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Yellow;
-            this.btnTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiem.Location = new System.Drawing.Point(291, 23);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(114, 35);
-            this.btnTimKiem.TabIndex = 1;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // txbTim
-            // 
-            this.txbTim.Location = new System.Drawing.Point(19, 31);
-            this.txbTim.Name = "txbTim";
-            this.txbTim.Size = new System.Drawing.Size(230, 20);
-            this.txbTim.TabIndex = 0;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -294,30 +314,12 @@
             this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dtgvThongTinNhanVien, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 10);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 11);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1335, 688);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1335, 687);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // comboBoxNhom
-            // 
-            this.comboBoxNhom.FormattingEnabled = true;
-            this.comboBoxNhom.Location = new System.Drawing.Point(149, 234);
-            this.comboBoxNhom.Name = "comboBoxNhom";
-            this.comboBoxNhom.Size = new System.Drawing.Size(259, 21);
-            this.comboBoxNhom.TabIndex = 27;
-            // 
-            // labelAction
-            // 
-            this.labelAction.AutoSize = true;
-            this.labelAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.labelAction.Location = new System.Drawing.Point(178, 165);
-            this.labelAction.Name = "labelAction";
-            this.labelAction.Size = new System.Drawing.Size(84, 29);
-            this.labelAction.TabIndex = 30;
-            this.labelAction.Text = "Action";
             // 
             // Danhsachnhanvien
             // 

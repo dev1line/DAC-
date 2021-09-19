@@ -171,7 +171,34 @@ create table DanhsachWO
 )
 go
 
+create table lichLV (
+	ID int identity primary key,
+	Calamviec nvarchar(100),
+	Nhom nvarchar(100),
+	Chungchi nvarchar(6),
+	Ten nvarchar(100),
+	tgcastart nvarchar(100),
+	tgcaend nvarchar(100),
+	Ghichu nvarchar(1000),
+	Ngay date
+)
+go
 
+create table lichWO (
+	ID int identity primary key,
+	AC nvarchar(100),
+	MaWO nvarchar(50),
+	noidung nvarchar(500),
+	Chungchi nvarchar(6),
+	Dungcu nvarchar(1000),
+	CCNV char(6),
+	NV nvarchar(100),
+	Ghichu nvarchar(1000),
+	Ngay date
+)
+go
+drop table lichWO
+drop table lichLV
 use Quanlynhanvien select * from Calamviec go
 use Quanlynhanvien select * from Danhsachnhom go
 select Danhsachnhom.Nhom,Danhsachnhanvien.ChungChi,Danhsachnhanvien.Ngayhethanchungchi,Danhsachnhanvien.Name,Danhsachnhanvien.Phone,Danhsachnhanvien.Email from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID  
@@ -244,6 +271,8 @@ insert dbo.Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email,Ngayhethanchungchi
 insert dbo.Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email,Ngayhethanchungchi) values (5,N'A2',N'Lê Minh Dũng','0903371986','dung.minhle@jetstarpacific.com.vn',N'20201220')
 insert dbo.Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email,Ngayhethanchungchi) values (5,N'Mech',N'Tô Văn Duy','0988480945','duy.tovan@jetstarpacific.com.vn',N'20201220')
 insert dbo.Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email,Ngayhethanchungchi) values (5,N'Mech',N'Bùi Thanh Duy','0789090882','duy.buithanh@jetstarpacific.com.vn', N'20201220')
+
+insert dbo.Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email,Ngayhethanchungchi) values (5,N'Mech',N'Bùi Thanh Duy','0789090882','duy.buithanh@jetstarpacific.com.vn', N'211201')
 
 update Danhsachnhanvien set Ngayhethanchungchi = N'20201220'
 

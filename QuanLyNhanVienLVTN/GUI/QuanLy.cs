@@ -339,7 +339,7 @@ namespace QuanLyNhanVienLVTN
             {     
                 try
                 {
-                    BLL.BLL_Handler.Instance.DelSHMB((int)itemRow.Cells[0].Value);
+                    BLL.BLL_Handler.Instance.DelSHMB(Convert.ToInt32(itemRow.Cells[0].Value));
                 }
                 catch (SqlException ex) when (ex.Number == 547)
                 {
@@ -362,7 +362,7 @@ namespace QuanLyNhanVienLVTN
                
                 try
                 {
-                    BLL.BLL_Handler.Instance.DelWO((int)itemRow.Cells[0].Value);    
+                    BLL.BLL_Handler.Instance.DelWO(Convert.ToInt32(itemRow.Cells[0].Value));    
                 }
                 catch (SqlException ex) when (ex.Number == 547)
                 {
@@ -409,11 +409,11 @@ namespace QuanLyNhanVienLVTN
 
                 try
                 {
-                    BLL.BLL_Handler.Instance.DelNhom((int)itemRow.Cells[0].Value);
+                    BLL.BLL_Handler.Instance.DelNhom(Convert.ToInt32(itemRow.Cells[0].Value));
                 } catch (SqlException ex) when (ex.Number == 547)
                 {
                    
-                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                    MessageBox.Show("Không thể xóa Nhóm này vì tồn tại constraint !");
                 }
                 show("");
 
