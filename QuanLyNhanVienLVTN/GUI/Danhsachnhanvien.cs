@@ -41,10 +41,7 @@ namespace QuanLyNhanVienLVTN
             dtgvThongTinNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvThongTinNhanVien.ReadOnly = true;
             dtgvThongTinNhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            /*if (dtgvThongTinNhanVien.RowCount > 0 && (int)dtgvThongTinNhanVien.Rows[0].Cells[0].Value == 3)
-            {
-                dtgvThongTinNhanVien.Rows[0]DefaultCellStyle.BackColor = Color.Black;
-            }*/
+
             
             int j = 0;
           foreach(DataRow i in BLL.BLL_Handler.Instance.getAllNHOM().Rows)
@@ -94,6 +91,7 @@ namespace QuanLyNhanVienLVTN
             {
                 int ma = BLL.BLL_Handler.Instance.getNhomID(((DTO.CBBItems)comboBoxNhom.SelectedItem).Value);
                 BLL.BLL_Handler.Instance.AddTTNV(ma, txbCC.Text, txbEml.Text, Convert.ToDouble(txbSDT.Text), txbTen.Text, Convert.ToDateTime(ngayhethan.Value).ToString("yyMMdd"));
+                MessageBox.Show("Thao tác thành công !");
                 Show("");
                 txbCC.Text = "";
                 txbEml.Text = "";
@@ -133,8 +131,13 @@ namespace QuanLyNhanVienLVTN
                 
                 if (txbCC.Text != "" && txbEml.Text != "" && txbSDT.Text != "" && txbTen.Text != "")
                 {
-                    BLL.BLL_Handler.Instance.UpdateNNTV(txbTen.Text, Convert.ToDouble(txbSDT.Text), txbEml.Text, txbCC.Text, Convert.ToDateTime(ngayhethan.Value).ToString("yyMMdd"), ((DTO.CBBItems)comboBoxNhom.SelectedItem).Key, (int)itemRow.Cells[0].Value);
+                    BLL.BLL_Handler.Instance.UpdateNNTV(txbTen.Text, Convert.ToDouble(txbSDT.Text), txbEml.Text, txbCC.Text, Convert.ToDateTime(ngayhethan.Value).ToString("yyMMdd"), ((DTO.CBBItems)comboBoxNhom.SelectedItem).Key, Convert.ToInt32(itemRow.Cells[0].Value));
+                    MessageBox.Show("Thao tác thành công !");
                     Show("");
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin trước khi sửa");    
                 }
 
             }
@@ -142,10 +145,13 @@ namespace QuanLyNhanVienLVTN
 
         private void dtgvThongTinNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            itemRow = dtgvThongTinNhanVien.Rows[e.RowIndex];
             if (e.RowIndex == -1) itemRow = dtgvThongTinNhanVien.Rows[0];
+            
             else if (itemRow != null)
             {
-                itemRow = dtgvThongTinNhanVien.Rows[e.RowIndex];
+                
 
                 txbCC.Text = (string)itemRow.Cells[2].Value;
                 txbEml.Text = (string)itemRow.Cells[6].Value;
@@ -167,7 +173,7 @@ namespace QuanLyNhanVienLVTN
             {
                 try
                 {
-                    BLL.BLL_Handler.Instance.DelTTNV((int)itemRow.Cells[0].Value);
+                    BLL.BLL_Handler.Instance.DelTTNV(Convert.ToInt32(itemRow.Cells[0].Value));
                 }
                 catch (SqlException ex) when (ex.Number == 547)
                 {
@@ -179,6 +185,29 @@ namespace QuanLyNhanVienLVTN
             else
             {
                 MessageBox.Show("You should choose one record to Delete it !");
+            }
+        }
+
+        private void dtgvThongTinNhanVien_Sorted(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (dtgvThongTinNhanVien.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in dtgvThongTinNhanVien.Rows)
+                    {
+                        if (Convert.ToDateTime(row.Cells[3].Value).Date < DateTime.Now.Date)
+                        {
+                            row.DefaultCellStyle.BackColor = Color.Red;
+                        }
+                    }
+                }
+
+            }
+            catch (SqlException ex) when (ex.Number == 547)
+            {
+                throw;
             }
         }
     }
