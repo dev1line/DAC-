@@ -27,12 +27,12 @@ namespace QuanLyNhanVienLVTN
                     f.ShowDialog();
                 }else
                 {
-                    MessageBox.Show("Username hoac password khong dung !");
+                    MessageBox.Show("Username hoặc password không đúng !");
                 }
             }
             else
             {
-                MessageBox.Show("Vui long dien day du username va password !");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhập !");
             }
         }
 

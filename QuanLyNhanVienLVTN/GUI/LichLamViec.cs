@@ -223,12 +223,11 @@ namespace QuanLyNhanVienLVTN
                 fs.Close();
                 return result;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 fs.Close();
                 throw new NotImplementedException();
             }
-            return null;
         }
 
         private void LichLamViec_FormClosing(object sender, FormClosingEventArgs e)

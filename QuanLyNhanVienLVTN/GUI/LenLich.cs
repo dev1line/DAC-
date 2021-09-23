@@ -85,13 +85,10 @@ namespace QuanLyNhanVienLVTN
             }
 
             comboBoxWO.SelectedIndex = 1;
-            int j = 0;
-            foreach (DataRow i in BLL.BLL_Handler.Instance.getAllTTNV("").Rows)
-            {
-                j++;
-                comboBoxNV.Items.Add(new DTO.CBBItems { Key = j, Value = "" + i.Field<string>("Chứng chỉ") + "-" + i.Field<string>("Tên nhân viên") });
-            }
-            comboBoxNV.SelectedIndex = 1;
+            
+
+            updateSelectNV();
+            
             
             foreach (DataRow i in BLL.BLL_Handler.Instance.getCaLam().Rows)
             {
@@ -99,7 +96,7 @@ namespace QuanLyNhanVienLVTN
             }
             cbCalam.SelectedIndex = 1;
             int s = 0;
-            foreach (DataRow i in BLL.BLL_Handler.Instance.getAllTTNV("").Rows)
+            foreach (DataRow i in BLL.BLL_Handler.Instance.getAllTTNV(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd")).Rows)
             {
                 s++;
                 cbNV.Items.Add(new DTO.CBBItems { Key = s, Value = "" + i.Field<string>("Nhóm") + "-" + i.Field<string>("Chứng chỉ") + "-" + i.Field<string>("Tên nhân viên") });
@@ -114,10 +111,25 @@ namespace QuanLyNhanVienLVTN
             dataGridView2.ReadOnly = true;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        private void show()
+
+        private void updateSelectNV()
+        {
+            comboBoxNV.Items.Clear();
+            if (BLL.BLL_Handler.Instance.getAlllichLV(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd"), "").Rows.Count > 0)
+            {
+                int j = 0;
+                foreach (DataRow i in BLL.BLL_Handler.Instance.getAlllichLV(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd"), "").Rows)
+                {
+                    j++;
+                    comboBoxNV.Items.Add(new DTO.CBBItems { Key = j, Value = "" + i.Field<string>("Chứng chỉ") + "-" + i.Field<string>("Tên nhân viên") });
+                }
+                comboBoxNV.SelectedIndex = 0;
+            }
+        }
+        private void show(string search)
         {
             dataGridView1.DataSource = BLL.BLL_Handler.Instance.getAllLichWO(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd"));
-            dataGridView2.DataSource = BLL.BLL_Handler.Instance.getAlllichLV(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd"));
+            dataGridView2.DataSource = BLL.BLL_Handler.Instance.getAlllichLV(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd"), search);
         }
 
         void showJobByDate(DateTime date)
@@ -131,21 +143,18 @@ namespace QuanLyNhanVienLVTN
             showJobByDate((sender as DateTimePicker).Value);
         }
 
-
-       /* List<Planitem> tabcontrol1 (DateTime date)
-        {
-            return Job.job.Where(p=>p.Date.Year == date.Year && p.Date.Month == date.Month && p.Date.Day == date.Day).ToList();
-        }
-        */
-
         private void btnPreviousDay_Click(object sender, EventArgs e)
         {
             dtpkDate.Value = dtpkDate.Value.AddDays(-1);
+            updateSelectNV();
+            show("");
         }
 
         private void btnNextDay_Click(object sender, EventArgs e)
         {
             dtpkDate.Value = dtpkDate.Value.AddDays(1);
+            updateSelectNV();
+            show("");
         }
 
         private void buttonWO_Click(object sender, EventArgs e)
@@ -154,12 +163,13 @@ namespace QuanLyNhanVienLVTN
             Console.WriteLine(item.Field<string>("Mã nội dung"));
             //comboBoxWO.Items.RemoveAt(comboBoxWO.SelectedIndex);
             BLL.BLL_Handler.Instance.AddlichWO_WO(item.Field<string>("Số hiệu máy bay"), item.Field<string>("Mã nội dung"), item.Field<string>("Nội dung"), item.Field<string>("Chứng chỉ"), item.Field<string>("Dụng cụ"), Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd"));
-            show();
+            MessageBox.Show("Thêm WO thành công !");
+            show("");
         }
 
         private void lsvLenLich_Load(object sender, EventArgs e)
         {
-            show();
+            show("");
         }
 
         private void buttonNV_Click(object sender, EventArgs e)
@@ -168,7 +178,8 @@ namespace QuanLyNhanVienLVTN
             Console.WriteLine(item.Field<string>("Tên nhân viên"));
             //comboBoxNV.Items.RemoveAt(comboBoxNV.SelectedIndex);
             BLL.BLL_Handler.Instance.AddlichWO_NV(Convert.ToInt32(itemRow.Cells[0].Value), item.Field<string>("Chứng chỉ"), item.Field<string>("Tên nhân viên"));
-            show();
+            MessageBox.Show("Thêm nhân viên thành công !");
+            show("");
         }
 
         private void buttonGC_Click(object sender, EventArgs e)
@@ -182,9 +193,10 @@ namespace QuanLyNhanVienLVTN
                     Console.WriteLine(itemRow);
                     itemRow = dataGridView1.Rows[0];
                     Console.WriteLine(itemRow);
-                    show();
+                    MessageBox.Show("Thêm ghi chú thành công !");
+                    show("");
                 }
-                catch (System.Exception ex)
+                catch (System.Exception)
                 {
                     MessageBox.Show("Vui Lòng chọn 1 đối tượng để ghi chú !");
                     
@@ -199,7 +211,12 @@ namespace QuanLyNhanVienLVTN
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1) itemRow = dataGridView1.Rows[0];
+            if (e.RowIndex == -1)
+            {
+                if (dataGridView1.RowCount > 0)
+                    itemRow = dataGridView1.Rows[0];
+                else MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
             else itemRow = dataGridView1.Rows[e.RowIndex];
             if (dataGridView1.SelectedRows.Count > 1)
             {
@@ -210,12 +227,18 @@ namespace QuanLyNhanVienLVTN
         private void btnXoaWO_Click(object sender, EventArgs e)
         {
             BLL.BLL_Handler.Instance.DellichWO_WO(Convert.ToInt32(itemRow.Cells[0].Value));
-            show();
+            MessageBox.Show("Xóa WO thành công !");
+            show("");
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1) itemRow = dataGridView2.Rows[0];
+            if (e.RowIndex == -1 )
+            {
+                if (dataGridView2.RowCount > 0) 
+                itemRow = dataGridView2.Rows[0];
+                MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
             else itemRow = dataGridView2.Rows[e.RowIndex];
             if (dataGridView2.SelectedRows.Count > 1)
             {
@@ -231,7 +254,8 @@ namespace QuanLyNhanVienLVTN
                 DataRow item = BLL.BLL_Handler.Instance.getAllTTNV("").Rows[((DTO.CBBItems)cbNV.SelectedItem).Key - 1];
                 Console.WriteLine(item.Field<string>("Tên nhân viên"));
                 BLL.BLL_Handler.Instance.AddlichLV(((DTO.CBBItems)cbCalam.SelectedItem).Value,item.Field<string>("Nhóm"), item.Field<string>("Chứng chỉ"), item.Field<string>("Tên nhân viên"), textBoxstartDay.Text, textBoxendDay.Text, Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd"));
-                show();
+                MessageBox.Show("Thêm nhân viên thành công !");
+                show("");
             } else
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin !");
@@ -243,7 +267,8 @@ namespace QuanLyNhanVienLVTN
             if(itemRow != null)
             {
                 BLL.BLL_Handler.Instance.DellichLV(Convert.ToInt32(itemRow.Cells[0].Value));
-                show();
+                MessageBox.Show("Xóa nhân viên thành công !");
+                show("");
             }
         }
 
@@ -252,11 +277,22 @@ namespace QuanLyNhanVienLVTN
             if (textGhiChu.Text != "")
             {
                 BLL.BLL_Handler.Instance.AddlichLV_GC(Convert.ToInt32(itemRow.Cells[0].Value), textGhiChu.Text);
-                show();
+                MessageBox.Show("Thêm ghi chú thành công !");
+                show("");
             }else
             {
                 MessageBox.Show("Không được để trống !");
             }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            show(txbTim.Text);
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateSelectNV();
         }
     }
 }

@@ -52,6 +52,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThongTinNhanVien)).BeginInit();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -69,10 +70,11 @@
             this.dtgvThongTinNhanVien.Size = new System.Drawing.Size(889, 681);
             this.dtgvThongTinNhanVien.TabIndex = 0;
             this.dtgvThongTinNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvThongTinNhanVien_CellClick);
-            this.dtgvThongTinNhanVien.Sorted += new System.EventHandler(this.dtgvThongTinNhanVien_Sorted);
+            this.dtgvThongTinNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgvThongTinNhanVien_CellFormatting);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnReset);
             this.panel3.Controls.Add(this.labelAction);
             this.panel3.Controls.Add(this.comboBoxNhom);
             this.panel3.Controls.Add(this.txbTim);
@@ -129,7 +131,7 @@
             this.btnTimKiem.FlatAppearance.BorderSize = 0;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiem.Location = new System.Drawing.Point(291, 23);
+            this.btnTimKiem.Location = new System.Drawing.Point(294, 23);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(114, 35);
             this.btnTimKiem.TabIndex = 1;
@@ -143,7 +145,7 @@
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.Location = new System.Drawing.Point(158, 87);
+            this.btnSua.Location = new System.Drawing.Point(114, 87);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 35);
             this.btnSua.TabIndex = 26;
@@ -261,7 +263,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.Red;
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Location = new System.Drawing.Point(314, 88);
+            this.btnXoa.Location = new System.Drawing.Point(317, 88);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 35);
             this.btnXoa.TabIndex = 11;
@@ -275,7 +277,7 @@
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(19, 87);
+            this.btnThem.Location = new System.Drawing.Point(18, 86);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(84, 36);
             this.btnThem.TabIndex = 10;
@@ -321,6 +323,20 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1335, 687);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Yellow;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.ForeColor = System.Drawing.Color.Black;
+            this.btnReset.Location = new System.Drawing.Point(215, 87);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(91, 35);
+            this.btnReset.TabIndex = 31;
+            this.btnReset.Text = "Làm mới";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // Danhsachnhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,5 +381,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ComboBox comboBoxNhom;
         private System.Windows.Forms.Label labelAction;
+        private System.Windows.Forms.Button btnReset;
     }
 }

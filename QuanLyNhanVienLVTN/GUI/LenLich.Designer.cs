@@ -141,7 +141,7 @@
             this.btnNextDay.Name = "btnNextDay";
             this.btnNextDay.Size = new System.Drawing.Size(117, 30);
             this.btnNextDay.TabIndex = 2;
-            this.btnNextDay.Text = "Ngày mai";
+            this.btnNextDay.Text = "Ngày tiếp theo";
             this.btnNextDay.UseVisualStyleBackColor = false;
             this.btnNextDay.Click += new System.EventHandler(this.btnNextDay_Click);
             // 
@@ -155,7 +155,7 @@
             this.btnPreviousDay.Name = "btnPreviousDay";
             this.btnPreviousDay.Size = new System.Drawing.Size(117, 31);
             this.btnPreviousDay.TabIndex = 1;
-            this.btnPreviousDay.Text = "Hôm qua";
+            this.btnPreviousDay.Text = "Ngày hôm trước";
             this.btnPreviousDay.UseVisualStyleBackColor = false;
             this.btnPreviousDay.Click += new System.EventHandler(this.btnPreviousDay_Click);
             // 
@@ -177,6 +177,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1339, 654);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -251,6 +252,7 @@
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txbTim
             // 

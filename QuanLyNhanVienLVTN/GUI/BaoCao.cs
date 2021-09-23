@@ -87,7 +87,7 @@ namespace QuanLyNhanVienLVTN
                         //Lấy đường dẫn của file cụ thể
                         //lấy tên của file cụ thể
                         fileName = Path.GetFileName(file);
-                        MessageBox.Show("attach " + file + "done !");
+                        MessageBox.Show("attach " + file + " done !");
                        
                     }
 
