@@ -37,19 +37,26 @@ namespace QuanLyNhanVienLVTN
             {
                 if(txbNewPassWord.Text != "" && txbReturnPassWord.Text == txbNewPassWord.Text)
                 {
-                    // Doi mat khau vaf ten hien thi
+                    // Doi mat khau va ten hien thi
                     BLL.BLL_Handler.Instance.updateTK(txbUserName.Text, txbDisPlayName.Text, txbNewPassWord.Text);
+                    MessageBox.Show("Đổi mật khẩu và tên hiển thị thành công !");
                 }
                 else
                 {
                     // Doi ten hien thi
                     BLL.BLL_Handler.Instance.updateTK(txbUserName.Text, txbDisPlayName.Text, txtPassWord.Text);
+                    MessageBox.Show("Đổi tên hiển thị thành công !");
                 }
                 this.Close();
             } else
             {
                 MessageBox.Show("Vui lòng nhập ít nhất Tên hiển thị để được cập nhật !");
             }
+        }
+
+        private void fAccountProfile_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

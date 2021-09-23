@@ -96,6 +96,7 @@ namespace QuanLyNhanVienLVTN
             labelHLMK.Show();
             txtMK2.Show();
             labelTitle.Text = "Thêm dữ liệu";
+            txtTenDN.Text = txtTHT.Text = txtMK.Text = txtMK2.Text = "";
         }
 
         private void QuanLy_Load(object sender, EventArgs e)
@@ -110,7 +111,12 @@ namespace QuanLyNhanVienLVTN
 
         private void dtgvTkDangNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1) itemRow = dtgvTkDangNhap.Rows[0];
+            if (e.RowIndex == -1)
+            {
+                if (dtgvTkDangNhap.RowCount > 0)
+                    itemRow = dtgvTkDangNhap.Rows[0];
+                else MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
             else itemRow = dtgvTkDangNhap.Rows[e.RowIndex];
             if (dtgvTkDangNhap.SelectedRows.Count > 1)
             {
@@ -125,7 +131,7 @@ namespace QuanLyNhanVienLVTN
             labelTitle.Text = "Sửa dữ liệu";
             if (itemRow == null)
             {
-                MessageBox.Show("You should choose one record to Edit it !");
+                MessageBox.Show("Bạn nên chọn một đối tượng để sửa nó !");
             }
             else
             {
@@ -311,7 +317,12 @@ namespace QuanLyNhanVienLVTN
 
         private void dataGridViewSHMB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1) itemRow = dataGridViewSHMB.Rows[0];
+            if (e.RowIndex == -1)
+            {
+                if (dataGridViewSHMB.RowCount > 0)
+                    itemRow = dataGridViewSHMB.Rows[0];
+                else MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
             else itemRow = dataGridViewSHMB.Rows[e.RowIndex];
             if (dataGridViewSHMB.SelectedRows.Count > 1)
             {
@@ -344,14 +355,14 @@ namespace QuanLyNhanVienLVTN
                 catch (SqlException ex) when (ex.Number == 547)
                 {
 
-                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                    MessageBox.Show("Không thể xóa Nhóm này vì tồn tại constraint !");
                 }
                 show("");
 
             }
             else
             {
-                MessageBox.Show("You should choose one record to Delete it !");
+                MessageBox.Show("Bạn nên chọn một đối tượng để xóa nó !");
             }
         }
 
@@ -367,7 +378,7 @@ namespace QuanLyNhanVienLVTN
                 catch (SqlException ex) when (ex.Number == 547)
                 {
 
-                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                    MessageBox.Show("Không thể xóa Nhóm này vì tồn tại constraint !");
                 }
                 show("");
 
@@ -380,7 +391,12 @@ namespace QuanLyNhanVienLVTN
 
         private void dtgvQuanLyWO_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1) itemRow = dtgvQuanLyWO.Rows[0];
+            if (e.RowIndex == -1)
+            {
+                if (dtgvQuanLyWO.RowCount > 0)
+                    itemRow = dtgvQuanLyWO.Rows[0];
+                else MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
             else itemRow = dtgvQuanLyWO.Rows[e.RowIndex];
             if (dtgvQuanLyWO.SelectedRows.Count > 1)
             {
@@ -420,13 +436,18 @@ namespace QuanLyNhanVienLVTN
             }
             else
             {
-                MessageBox.Show("You should choose one record to Delete it !");
+                MessageBox.Show("Bạn nên chọn một đối tượng để xóa nó !");
             }
         }
 
         private void dataGridViewNHOM_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1) itemRow = dataGridViewNHOM.Rows[0];
+            if (e.RowIndex == -1)
+            {
+                if (dataGridViewNHOM.RowCount > 0)
+                    itemRow = dataGridViewNHOM.Rows[0];
+                else MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
             else itemRow = dataGridViewNHOM.Rows[e.RowIndex];
             if (dataGridViewNHOM.SelectedRows.Count > 1)
             {

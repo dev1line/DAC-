@@ -43,13 +43,11 @@ namespace QuanLyNhanVienLVTN
             dtgvThongTinNhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             
-            int j = 0;
           foreach(DataRow i in BLL.BLL_Handler.Instance.getAllNHOM().Rows)
             {
-                //j++;
                 comboBoxNhom.Items.Add(new DTO.CBBItems { Key = i.Field<int>("ID"), Value = i.Field<string>("Nhom") });
             }
-            comboBoxNhom.SelectedIndex = 1;
+            comboBoxNhom.SelectedIndex = 0;
         }
         private void Show(string search)
         {
@@ -57,14 +55,19 @@ namespace QuanLyNhanVienLVTN
             try
             {
 
-                if (dtgvThongTinNhanVien.Rows.Count > 0)
+                foreach (DataGridViewRow row in dtgvThongTinNhanVien.Rows)
                 {
-                    foreach (DataGridViewRow row in dtgvThongTinNhanVien.Rows)
+                    if (Convert.ToDateTime(row.Cells["Ngày hết hạn chứng chỉ"].Value) >= DateTime.Now.Date)
                     {
-                        if (Convert.ToDateTime(row.Cells[3].Value).Date < DateTime.Now.Date)
-                        {
-                            row.DefaultCellStyle.BackColor = Color.Red;
-                        }
+                        row.Cells["Ngày hết hạn chứng chỉ"].Style.BackColor = Color.Yellow;
+                    }
+                    if (Convert.ToDateTime(row.Cells["Ngày hết hạn chứng chỉ"].Value) >= DateTime.Now.Date.AddDays(60))
+                    {
+                        row.Cells["Ngày hết hạn chứng chỉ"].Style.BackColor = Color.LightGreen;
+                    }
+                    if (Convert.ToDateTime(row.Cells["Ngày hết hạn chứng chỉ"].Value) < DateTime.Now.Date)
+                    {
+                        row.Cells["Ngày hết hạn chứng chỉ"].Style.BackColor = Color.LightSalmon;
                     }
                 }
 
@@ -73,7 +76,6 @@ namespace QuanLyNhanVienLVTN
             {
                 throw;
             }
-           
         }
         private void Danhsachnhanvien_Load(object sender, EventArgs e)
         {
@@ -97,7 +99,7 @@ namespace QuanLyNhanVienLVTN
                 txbEml.Text = "";
                 txbSDT.Text = "";
                 txbTen.Text = "";
-                comboBoxNhom.SelectedIndex = 1;
+                comboBoxNhom.SelectedIndex = 0;
             }
             else
             {
@@ -107,7 +109,7 @@ namespace QuanLyNhanVienLVTN
 
         private void txbSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -124,7 +126,7 @@ namespace QuanLyNhanVienLVTN
 
             if (itemRow == null)
             {
-                MessageBox.Show("You should choose one record to Edit it !");
+                MessageBox.Show("Bạn nên chọn một đối tượng để sửa nó !");
             }
             else
             {
@@ -134,6 +136,11 @@ namespace QuanLyNhanVienLVTN
                     BLL.BLL_Handler.Instance.UpdateNNTV(txbTen.Text, Convert.ToDouble(txbSDT.Text), txbEml.Text, txbCC.Text, Convert.ToDateTime(ngayhethan.Value).ToString("yyMMdd"), ((DTO.CBBItems)comboBoxNhom.SelectedItem).Key, Convert.ToInt32(itemRow.Cells[0].Value));
                     MessageBox.Show("Thao tác thành công !");
                     Show("");
+                    txbCC.Text = "";
+                    txbEml.Text = "";
+                    txbSDT.Text = "";
+                    txbTen.Text = "";
+                    comboBoxNhom.SelectedIndex = 0;
                 }
                 else
                 {
@@ -145,14 +152,17 @@ namespace QuanLyNhanVienLVTN
 
         private void dtgvThongTinNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            itemRow = dtgvThongTinNhanVien.Rows[e.RowIndex];
-            if (e.RowIndex == -1) itemRow = dtgvThongTinNhanVien.Rows[0];
-            
-            else if (itemRow != null)
+            if (e.RowIndex == -1)
             {
-                
+                if (dtgvThongTinNhanVien.RowCount > 0)
+                    itemRow = dtgvThongTinNhanVien.Rows[0];
+                else MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
+            /*if (e.RowIndex == -1) itemRow = dtgvThongTinNhanVien.Rows[0];*/
+            else 
+            {
 
+                itemRow = dtgvThongTinNhanVien.Rows[e.RowIndex];
                 txbCC.Text = (string)itemRow.Cells[2].Value;
                 txbEml.Text = (string)itemRow.Cells[6].Value;
                 txbSDT.Text = Convert.ToString(itemRow.Cells[5].Value);
@@ -174,41 +184,51 @@ namespace QuanLyNhanVienLVTN
                 try
                 {
                     BLL.BLL_Handler.Instance.DelTTNV(Convert.ToInt32(itemRow.Cells[0].Value));
+                    MessageBox.Show("Thao tác thành công !");
                 }
                 catch (SqlException ex) when (ex.Number == 547)
                 {
 
-                    MessageBox.Show("Không thể xóa Nhóm này vif tồn tại constraint !");
+                    MessageBox.Show("Không thể xóa Nhóm này vì tồn tại constraint !");
                 }
                 Show("");
+                txbCC.Text = "";
+                txbEml.Text = "";
+                txbSDT.Text = "";
+                txbTen.Text = "";
+                comboBoxNhom.SelectedIndex = 0;
             }
             else
             {
-                MessageBox.Show("You should choose one record to Delete it !");
+                MessageBox.Show("Bạn nên chọn một đối tượng để sửa nó !");
             }
         }
 
-        private void dtgvThongTinNhanVien_Sorted(object sender, EventArgs e)
+       
+
+        private void dtgvThongTinNhanVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            try
+            /*foreach (DataGridViewRow row in dtgvThongTinNhanVien.Rows)
             {
-
-                if (dtgvThongTinNhanVien.Rows.Count > 0)
+                if (Convert.ToDateTime(row.Cells["Ngày hết hạn chứng chỉ"].Value) > DateTime.Now.Date)
                 {
-                    foreach (DataGridViewRow row in dtgvThongTinNhanVien.Rows)
-                    {
-                        if (Convert.ToDateTime(row.Cells[3].Value).Date < DateTime.Now.Date)
-                        {
-                            row.DefaultCellStyle.BackColor = Color.Red;
-                        }
-                    }
+                    row.Cells["Ngày hết hạn chứng chỉ"].Style.BackColor = Color.Yellow;
                 }
+                if (Convert.ToDateTime(row.Cells["Ngày hết hạn chứng chỉ"].Value) > DateTime.Now.Date.AddDays(60))
+                {
+                    row.Cells["Ngày hết hạn chứng chỉ"].Style.BackColor = Color.LightGreen;
+                }
+                if (Convert.ToDateTime(row.Cells["Ngày hết hạn chứng chỉ"].Value) < DateTime.Now.Date)
+                {
+                    row.Cells["Ngày hết hạn chứng chỉ"].Style.BackColor = Color.LightSalmon;
+                }
+            }*/
+        }
 
-            }
-            catch (SqlException ex) when (ex.Number == 547)
-            {
-                throw;
-            }
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txbTen.Text = txbCC.Text = txbEml.Text = txbSDT.Text = "";
+            comboBoxNhom.SelectedIndex = 0;
         }
     }
 }

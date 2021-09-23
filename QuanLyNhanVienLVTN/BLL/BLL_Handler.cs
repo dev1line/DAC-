@@ -162,6 +162,10 @@ namespace QuanLyNhanVienLVTN.BLL
         }
         public DataTable getAllTTNV(string search)
         {
+            if(search.Length == 6)
+            {
+                return DAO.DataProvider.Instance.ExecuteQuery($"select Danhsachnhanvien.ID[ID],Danhsachnhom.Nhom[Nhóm],Danhsachnhanvien.ChungChi[Chứng chỉ],Danhsachnhanvien.Ngayhethanchungchi[Ngày hết hạn chứng chỉ],Danhsachnhanvien.Name[Tên nhân viên],Danhsachnhanvien.Phone[Số điện thoại],Danhsachnhanvien.Email[Email] from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID WHERE Danhsachnhanvien.Ngayhethanchungchi > '{search}'");
+            }
             if (search != "")
             {
                 return DAO.DataProvider.Instance.ExecuteQuery($"select Danhsachnhanvien.ID[ID],Danhsachnhom.Nhom[Nhóm],Danhsachnhanvien.ChungChi[Chứng chỉ],Danhsachnhanvien.Ngayhethanchungchi[Ngày hết hạn chứng chỉ],Danhsachnhanvien.Name[Tên nhân viên],Danhsachnhanvien.Phone[Số điện thoại],Danhsachnhanvien.Email[Email] from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID WHERE Danhsachnhom.Nhom LIKE '%{search}%' or Danhsachnhanvien.ChungChi LIKE '%{search}%' or Danhsachnhanvien.Name LIKE '%{search}%' or Danhsachnhanvien.Email LIKE '%{search}%'");
@@ -171,13 +175,17 @@ namespace QuanLyNhanVienLVTN.BLL
         }
         public DataTable getAllLichWO(string Ngay)
         {
-            string query = $"SELECT * from lichWO where Ngay = '{Ngay}'";
+            string query = $"SELECT  ID[ID],AC[A/C], MaWO[Mã nội dung], noidung[Nội dung],Dungcu[Dụng cụ], CCNV[Chứng chỉ của nhân viên], NV[Tên nhân viên đảm nhận], Ghichu[Ghi chú] from lichWO where Ngay = '{Ngay}'";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         
-             public DataTable getAlllichLV(string Ngay)
+        public DataTable getAlllichLV(string Ngay, string search)
         {
-            string query = $"SELECT * from lichLV where Ngay = '{Ngay}'";
+            if (search != "")
+            {
+                return DAO.DataProvider.Instance.ExecuteQuery($"SELECT ID[ID],Calamviec[Ca làm việc], Nhom[Nhóm], Chungchi[Chứng chỉ], Ten[Tên nhân viên], tgcastart[Thời gian bắt đầu ca], tgcaend[THời gian kết thúc ca], Ghichu[Ghi chú] from lichLV where Ngay = '{Ngay}' and (Calamviec LIKE '%{search}%' or Nhom LIKE '%{search}%' or Chungchi LIKE '%{search}%' or Ten LIKE '%{search}%' or tgcastart LIKE '%{search}%' or tgcaend LIKE '%{search}%')");
+            }
+            string query = $"SELECT  ID[ID],Calamviec[Ca làm việc], Nhom[Nhóm], Chungchi[Chứng chỉ], Ten[Tên nhân viên], tgcastart[Thời gian bắt đầu ca], tgcaend[THời gian kết thúc ca], Ghichu[Ghi chú] from lichLV where Ngay = '{Ngay}'";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         public bool AddlichWO_WO(string AC, string MND, string ND, string CC, string DC, string Ngay)
