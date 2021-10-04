@@ -22,6 +22,7 @@ namespace QuanLyNhanVienLVTN
             QuanLyTaiKhoanDangNhap();
             SoHieuMayBay();
             Nhom();
+            NgayNghi();
             if (BLL.BLL_Handler.role == "adminroster")
             {
                 tabControl1.SelectedIndex = 0;
@@ -36,6 +37,8 @@ namespace QuanLyNhanVienLVTN
                 tabControl1.TabPages.Remove(tabPage1);
 
                 tabControl1.TabPages.Remove(tabPage4);
+
+                tabControl1.TabPages.Remove(tabPage5);
             }
 
         }
@@ -46,7 +49,7 @@ namespace QuanLyNhanVienLVTN
             dataGridViewSHMB.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
-            private void QuanLyWO()
+        private void QuanLyWO()
         {
             dtgvQuanLyWO.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvQuanLyWO.ReadOnly = true;
@@ -61,7 +64,17 @@ namespace QuanLyNhanVienLVTN
             comboBoxAC.SelectedIndex = 1;
         }
 
+        private void NgayNghi()
+        {
+            dataGridViewNN.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewNN.ReadOnly = true;
+            dataGridViewNN.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            radioButton1.Checked = true;
+            textBox1.ReadOnly = true;
+           
+         
+        }
         private void QuanLyTaiKhoanDangNhap()
         {
             dtgvTkDangNhap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -89,6 +102,7 @@ namespace QuanLyNhanVienLVTN
             dtgvQuanLyWO.DataSource = BLL.BLL_Handler.Instance.getAllQLWO(search);
             dataGridViewSHMB.DataSource = BLL.BLL_Handler.Instance.getAllSHMB();
             dataGridViewNHOM.DataSource = BLL.BLL_Handler.Instance.getAllNHOM();
+            dataGridViewNN.DataSource = BLL.BLL_Handler.Instance.getAllDataNN(Convert.ToDateTime(dateTimePickerNN.Value).ToString("yyMMdd"), search);
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -456,6 +470,100 @@ namespace QuanLyNhanVienLVTN
             {
                 MessageBox.Show("Bạn nên chọn một hàng để sửa !");
             }
+        }
+
+        private void buttonShow_Click(object sender, EventArgs e)
+        {
+            show("");
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                dateTimePicker2.Enabled = false;
+                dateTimePicker2.Visible = false;
+                labelNN1.Text = "Ngày nghỉ:";
+                labelNN2.Visible = false;
+            }
+            else
+            {
+                dateTimePicker2.Enabled = true;
+                dateTimePicker2.Visible = true;
+                labelNN1.Text = "Ngày bắt đầu:";
+                labelNN2.Visible = true;
+            }
+
+        }
+
+        private void dataGridViewNN_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                if (dataGridViewNHOM.RowCount > 0)
+                    itemRow = dataGridViewNN.Rows[0];
+                else MessageBox.Show("Không có dữ liệu để thao tác !"); ;
+            }
+            else
+            {
+                itemRow = dataGridViewNN.Rows[e.RowIndex];
+                textBox1.Text = (string)itemRow.Cells[1].Value;
+            }
+            if (dataGridViewNN.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Bạn nên chọn một hàng để sửa !");
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
+        }
+
+        private void buttonAddNN_Click(object sender, EventArgs e)
+        {
+            if (itemRow != null)
+            {
+                if(radioButton1.Checked)
+                {
+                    // Xin nghi 1 nggay
+                    BLL.BLL_Handler.Instance.AddNN_1day(Convert.ToInt32(itemRow.Cells[0].Value), Convert.ToDateTime(dateTimePicker1.Value).ToString("yyMMdd"));
+                    MessageBox.Show("Thêm 1 ngày nghỉ thành công !");
+                    show("");
+                }
+                else {
+                    // Xin nghi nhieu ngay
+                    Console.WriteLine((dateTimePicker2.Value - dateTimePicker1.Value).Days.ToString());
+                    for(int i = 0; i <= (dateTimePicker2.Value - dateTimePicker1.Value).Days; i++ )
+                    {
+                        BLL.BLL_Handler.Instance.DelNN(Convert.ToInt32(itemRow.Cells[0].Value), Convert.ToDateTime(dateTimePicker1.Value).AddDays(i).ToString("yyMMdd"));
+                        BLL.BLL_Handler.Instance.AddNN_1day(Convert.ToInt32(itemRow.Cells[0].Value), Convert.ToDateTime(dateTimePicker1.Value).AddDays(i).ToString("yyMMdd"));
+                    }
+                    MessageBox.Show("Thêm nhiều ngày nghỉ thành công !");
+                    show("");
+                }
+            }
+            else MessageBox.Show("Vui lòng chọn 1 đối tượng để thao tác !");
+        }
+
+        private void buttonDelNN_Click(object sender, EventArgs e)
+        {
+            if (itemRow != null)
+            {
+                BLL.BLL_Handler.Instance.DelNN(Convert.ToInt32(itemRow.Cells[0].Value), Convert.ToDateTime(dateTimePickerNN.Value).ToString("yyMMdd"));
+                MessageBox.Show("Xóa 1 ngày nghỉ thành công !");
+                show("");
+            }
+            else MessageBox.Show("Vui lòng chọn 1 đối tượng để thao tác !");
         }
     }
 }

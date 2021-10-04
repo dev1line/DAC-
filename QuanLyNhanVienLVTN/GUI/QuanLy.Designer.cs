@@ -85,6 +85,25 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridViewNHOM = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridViewNN = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonAddNN = new System.Windows.Forms.Button();
+            this.buttonDelNN = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelNN1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.labelNN2 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerNN = new System.Windows.Forms.DateTimePicker();
+            this.buttonShow = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -102,6 +121,11 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNHOM)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNN)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -110,6 +134,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
@@ -726,6 +751,198 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1334, 710);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox5);
+            this.tabPage5.Controls.Add(this.groupBox3);
+            this.tabPage5.Controls.Add(this.dataGridViewNN);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1320, 678);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "QL Ngày nghỉ";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewNN
+            // 
+            this.dataGridViewNN.AllowUserToAddRows = false;
+            this.dataGridViewNN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNN.Location = new System.Drawing.Point(81, 111);
+            this.dataGridViewNN.Name = "dataGridViewNN";
+            this.dataGridViewNN.Size = new System.Drawing.Size(688, 399);
+            this.dataGridViewNN.TabIndex = 0;
+            this.dataGridViewNN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNN_CellClick);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.buttonReset);
+            this.groupBox3.Controls.Add(this.buttonDelNN);
+            this.groupBox3.Controls.Add(this.buttonAddNN);
+            this.groupBox3.Location = new System.Drawing.Point(808, 111);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(438, 399);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Action:";
+            // 
+            // buttonAddNN
+            // 
+            this.buttonAddNN.Location = new System.Drawing.Point(74, 56);
+            this.buttonAddNN.Name = "buttonAddNN";
+            this.buttonAddNN.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNN.TabIndex = 0;
+            this.buttonAddNN.Text = "Thêm";
+            this.buttonAddNN.UseVisualStyleBackColor = true;
+            this.buttonAddNN.Click += new System.EventHandler(this.buttonAddNN_Click);
+            // 
+            // buttonDelNN
+            // 
+            this.buttonDelNN.Location = new System.Drawing.Point(180, 56);
+            this.buttonDelNN.Name = "buttonDelNN";
+            this.buttonDelNN.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelNN.TabIndex = 1;
+            this.buttonDelNN.Text = "Xóa";
+            this.buttonDelNN.UseVisualStyleBackColor = true;
+            this.buttonDelNN.Click += new System.EventHandler(this.buttonDelNN_Click);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Location = new System.Drawing.Point(299, 56);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonReset.TabIndex = 2;
+            this.buttonReset.Text = "Refresh";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.radioButton2);
+            this.groupBox4.Controls.Add(this.radioButton1);
+            this.groupBox4.Controls.Add(this.dateTimePicker2);
+            this.groupBox4.Controls.Add(this.labelNN2);
+            this.groupBox4.Controls.Add(this.dateTimePicker1);
+            this.groupBox4.Controls.Add(this.labelNN1);
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Location = new System.Drawing.Point(22, 85);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(393, 247);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Info:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 82);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Tên nhân viên:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(124, 79);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(247, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // labelNN1
+            // 
+            this.labelNN1.AutoSize = true;
+            this.labelNN1.Location = new System.Drawing.Point(19, 135);
+            this.labelNN1.Name = "labelNN1";
+            this.labelNN1.Size = new System.Drawing.Size(75, 13);
+            this.labelNN1.TabIndex = 2;
+            this.labelNN1.Text = "Ngày bắt đầu:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 129);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(247, 20);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(158, 30);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(57, 17);
+            this.radioButton1.TabIndex = 4;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "1 ngày";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(277, 30);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(77, 17);
+            this.radioButton2.TabIndex = 5;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "nhiều ngày";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // labelNN2
+            // 
+            this.labelNN2.AutoSize = true;
+            this.labelNN2.Location = new System.Drawing.Point(19, 185);
+            this.labelNN2.Name = "labelNN2";
+            this.labelNN2.Size = new System.Drawing.Size(77, 13);
+            this.labelNN2.TabIndex = 4;
+            this.labelNN2.Text = "Ngày kết thúc:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(124, 179);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(247, 20);
+            this.dateTimePicker2.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(19, 32);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 13);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Số ngày nghỉ:";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.buttonShow);
+            this.groupBox5.Controls.Add(this.dateTimePickerNN);
+            this.groupBox5.Location = new System.Drawing.Point(450, 31);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(405, 55);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Chọn thời gian:";
+            // 
+            // dateTimePickerNN
+            // 
+            this.dateTimePickerNN.Location = new System.Drawing.Point(25, 19);
+            this.dateTimePickerNN.Name = "dateTimePickerNN";
+            this.dateTimePickerNN.Size = new System.Drawing.Size(282, 20);
+            this.dateTimePickerNN.TabIndex = 0;
+            // 
+            // buttonShow
+            // 
+            this.buttonShow.Location = new System.Drawing.Point(322, 18);
+            this.buttonShow.Name = "buttonShow";
+            this.buttonShow.Size = new System.Drawing.Size(75, 23);
+            this.buttonShow.TabIndex = 1;
+            this.buttonShow.Text = "Show";
+            this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
+            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -759,6 +976,12 @@
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNHOM)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNN)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -822,5 +1045,24 @@
         private System.Windows.Forms.TextBox textBoxNhom;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridViewNHOM;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label labelNN2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label labelNN1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Button buttonDelNN;
+        private System.Windows.Forms.Button buttonAddNN;
+        private System.Windows.Forms.DataGridView dataGridViewNN;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button buttonShow;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNN;
     }
 }
