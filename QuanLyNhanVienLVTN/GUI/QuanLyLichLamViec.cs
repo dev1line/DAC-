@@ -96,5 +96,10 @@ namespace QuanLyNhanVienLVTN
         {
             mylogin.Show();
         }
+
+        private void buttonSL_Click(object sender, EventArgs e)
+        {
+                   
+        }   
     }
 }

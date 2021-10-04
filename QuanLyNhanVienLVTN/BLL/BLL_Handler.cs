@@ -47,13 +47,13 @@ namespace QuanLyNhanVienLVTN.BLL
 
         public bool AddtkDangNhap(string user,string ten, int type, string pass)
         {
-            string query = $"INSERT INTO Account (UserName, DisplayName, Password, TypeID) values('{user}', '{ten}', '{pass}', {type})";
+            string query = $"INSERT INTO Account (UserName, DisplayName, Password, TypeID) values('{user}', N'{ten}', '{pass}', {type})";
              DAO.DataProvider.Instance.ExecuteQuery(query);
             return true;
         }
         public bool EdittkDangNhap(string user, string ten, int type, string pass)
         {
-            string query = $"UPDATE Account SET DisplayName='{ten}', Password='{pass}', TypeID={type} where UserName = '{user}'";
+            string query = $"UPDATE Account SET DisplayName= N'{ten}', Password='{pass}', TypeID={type} where UserName = '{user}'";
              DAO.DataProvider.Instance.ExecuteQuery(query);
             return true;
         }
@@ -91,7 +91,7 @@ namespace QuanLyNhanVienLVTN.BLL
             public DataTable getAllNHOM()
         {
 
-            string query = "select * from Danhsachnhom ";
+            string query = "select ID[ID], Nhom[Nhóm] from Danhsachnhom ";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         public void updateTK(string user, string ten, string pass)
@@ -102,7 +102,7 @@ namespace QuanLyNhanVienLVTN.BLL
         
          public void UpdateNNTV(string ten, double sdt, string email, string cc, string date, int nhom, int ma)
         {
-            string query = $"UPDATE Danhsachnhanvien SET Name = '{ten}', Phone = {sdt}, Email = '{email}', Chungchi = '{cc}', Ngayhethanchungchi = '{date}', NhomID = {nhom} WHERE ID = {ma}";
+            string query = $"UPDATE Danhsachnhanvien SET Name = N'{ten}', Phone = {sdt}, Email = '{email}', Chungchi = N'{cc}', Ngayhethanchungchi = '{date}', NhomID = {nhom} WHERE ID = {ma}";
             DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         public void AddSHMB(string text)
@@ -145,7 +145,7 @@ namespace QuanLyNhanVienLVTN.BLL
         
         public DataTable AddTTNV(int ma, string CC, string email, double sdt, string ten, string Ngayhethanchungchi)
         {
-            string query = $"INSERT INTO Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email, Ngayhethanchungchi) values({ma}, '{CC}','{ten}',{sdt}, '{email}', N'{Ngayhethanchungchi}')";
+            string query = $"INSERT INTO Danhsachnhanvien (NhomID,ChungChi,Name,Phone,Email, Ngayhethanchungchi) values({ma}, N'{CC}',N'{ten}',{sdt}, '{email}', N'{Ngayhethanchungchi}')";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
             
         }
@@ -173,6 +173,10 @@ namespace QuanLyNhanVienLVTN.BLL
             string query = "select Danhsachnhanvien.ID[ID],Danhsachnhom.Nhom[Nhóm],Danhsachnhanvien.ChungChi[Chứng chỉ],Danhsachnhanvien.Ngayhethanchungchi[Ngày hết hạn chứng chỉ],Danhsachnhanvien.Name[Tên nhân viên],Danhsachnhanvien.Phone[Số điện thoại],Danhsachnhanvien.Email[Email] from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
         }
+        public DataTable getAllTTNVCBB(string search)
+        {
+            return DAO.DataProvider.Instance.ExecuteQuery($"select * from (select  Danhsachnhanvien.ID,Danhsachnhanvien.Name[Tên nhân viên], Danhsachnhom.Nhom[Nhóm], Danhsachnhanvien.ChungChi[Chứng chỉ] from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID  WHERE Danhsachnhanvien.Ngayhethanchungchi > N'{search}') as a left  join (select Ten from Danhsachnhanvien as b1 inner join lichLV as b2 on b1.Name = b2.Ten  WHERE b2.Ngay = N'{search}') as b on a.[Tên nhân viên] = b.Ten where Ten is null");
+        }
         public DataTable getAllLichWO(string Ngay)
         {
             string query = $"SELECT  ID[ID],AC[A/C], MaWO[Mã nội dung], noidung[Nội dung],Dungcu[Dụng cụ], CCNV[Chứng chỉ của nhân viên], NV[Tên nhân viên đảm nhận], Ghichu[Ghi chú] from lichWO where Ngay = '{Ngay}'";
@@ -185,18 +189,34 @@ namespace QuanLyNhanVienLVTN.BLL
             {
                 return DAO.DataProvider.Instance.ExecuteQuery($"SELECT ID[ID],Calamviec[Ca làm việc], Nhom[Nhóm], Chungchi[Chứng chỉ], Ten[Tên nhân viên], tgcastart[Thời gian bắt đầu ca], tgcaend[THời gian kết thúc ca], Ghichu[Ghi chú] from lichLV where Ngay = '{Ngay}' and (Calamviec LIKE '%{search}%' or Nhom LIKE '%{search}%' or Chungchi LIKE '%{search}%' or Ten LIKE '%{search}%' or tgcastart LIKE '%{search}%' or tgcaend LIKE '%{search}%')");
             }
-            string query = $"SELECT  ID[ID],Calamviec[Ca làm việc], Nhom[Nhóm], Chungchi[Chứng chỉ], Ten[Tên nhân viên], tgcastart[Thời gian bắt đầu ca], tgcaend[THời gian kết thúc ca], Ghichu[Ghi chú] from lichLV where Ngay = '{Ngay}'";
+            string query = $"SELECT  ID[ID],Calamviec[Ca làm việc], Nhom[Nhóm], Chungchi[Chứng chỉ], Ten[Tên nhân viên], tgcastart[Thời gian bắt đầu ca], tgcaend[Thời gian kết thúc ca], Ghichu[Ghi chú] from lichLV where Ngay = '{Ngay}'";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable getAlllichLVCBB(string Ngay)
+        {
+            string query = $"select * from (select ID, Chungchi[Chứng chỉ], Ten[Tên nhân viên] from lichLV where Ngay = N'{Ngay}') as c  left join (select CCNV, NV from lichWO where Ngay = N'{Ngay}') as d on c.[Tên nhân viên] = d.NV where NV is null";
+            return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public int getNVPerDay(string ngay, string search)
+        {
+            if (search != "")
+            {
+                return DAO.DataProvider.Instance.ExecuteQuery($"SELECT distinct Ten from lichLV where Ngay = '{ngay}' and Calamviec LIKE N'%{search}%' ").Rows.Count;
+            }
+            string query = $"SELECT distinct Ten from lichLV where Ngay = '{ngay}'";
+            return DAO.DataProvider.Instance.ExecuteQuery(query).Rows.Count;
         }
         public bool AddlichWO_WO(string AC, string MND, string ND, string CC, string DC, string Ngay)
         {
-            string query = $"INSERT INTO lichWO(AC, MaWO, noidung, Chungchi, Dungcu, Ngay ) VALUES('{AC}', '{MND}','{ND}','{CC}','{DC}', '{Ngay}')";
+            string query = $"INSERT INTO lichWO(AC, MaWO, noidung, Chungchi, Dungcu, Ngay ) VALUES('{AC}', '{MND}',N'{ND}',N'{CC}',N'{DC}', '{Ngay}')";
             DAO.DataProvider.Instance.ExecuteQuery(query);
             return true;
         }
         public bool AddlichWO_NV(int pos, string cc, string ten)
         {
-            string query = $"UPDATE lichWO SET CCNV = '{cc}', NV = '{ten}' WHERE ID = {pos}";
+            string query = $"UPDATE lichWO SET CCNV = N'{cc}', NV = N'{ten}' WHERE ID = {pos}";
             DAO.DataProvider.Instance.ExecuteQuery(query);
             return true;
         }
@@ -235,7 +255,7 @@ namespace QuanLyNhanVienLVTN.BLL
         public bool AddlichLV(string ca, string nhom, string chungchi, string ten, string start, string end, string Ngay)
         {
             Console.WriteLine(ca + nhom + chungchi + ten + start + end + Ngay);
-            string query = $"INSERT INTO lichLV (Calamviec,Nhom,Chungchi,Ten,tgcastart, tgcaend, Ngay) VALUES ('{ca}','{nhom}','{chungchi}','{ten}','{start}', '{end}', '{Ngay}')";
+            string query = $"INSERT INTO lichLV (Calamviec,Nhom,Chungchi,Ten,tgcastart, tgcaend, Ngay) VALUES (N'{ca}',N'{nhom}',N'{chungchi}',N'{ten}','{start}', '{end}', '{Ngay}')";
             DAO.DataProvider.Instance.ExecuteQuery(query);
             return true;
         }
@@ -243,6 +263,16 @@ namespace QuanLyNhanVienLVTN.BLL
         {
             string query = $"UPDATE lichLV SET Ghichu = '{gc}' WHERE ID = {pos}";
             DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+
+        public bool checkExistAccount(string name)
+        {
+            string query = $"SELECT * FROM Account WHERE UserName = '{name}'";
+            if(DAO.DataProvider.Instance.ExecuteQuery(query).Rows.Count > 0)
+            {
+                return false;
+            }
             return true;
         }
     }

@@ -193,8 +193,9 @@ namespace QuanLyNhanVienLVTN
                                     break;
                                 }
                         }
-                        if (BLL.BLL_Handler.Instance.AddtkDangNhap(txtTenDN.Text, txtTHT.Text, type, txtMK.Text))
+                        if (BLL.BLL_Handler.Instance.checkExistAccount(txtTenDN.Text))
                         {
+                            BLL.BLL_Handler.Instance.AddtkDangNhap(txtTenDN.Text, txtTHT.Text, type, txtMK.Text);
                             MessageBox.Show("Thêm tài khoản thành công !");
                             txtTenDN.Text = "";
                             txtTHT.Text = "";
@@ -238,18 +239,20 @@ namespace QuanLyNhanVienLVTN
                                 break;
                             }
                     }
-                    if (BLL.BLL_Handler.Instance.EdittkDangNhap(txtTenDN.Text, txtTHT.Text, type, txtMK.Text))
+                    if (BLL.BLL_Handler.Instance.EdittkDangNhap(txtTenDN.Text, txtTHT.Text, type, txtMK.Text))                  
                     {
-                        MessageBox.Show("Thêm tài khoản thành công !");
+                       
+                            MessageBox.Show("Chỉnh sửa tài khoản thành công !");
+                        show("");
                         txtTenDN.Text = "";
                         txtTHT.Text = "";
                         txtMK.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("Thêm tài khoản thất bại !");
+                        MessageBox.Show("Chỉnh sửa tài khoản thất bại !");
                     }
-                    show("");
+                  
                 }
                 else
                 {
