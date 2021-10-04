@@ -136,7 +136,7 @@ namespace QuanLyNhanVienLVTN
 
             cbNV.Items.Clear();
             cbNV.Text = "";
-            Console.WriteLine("list:", BLL.BLL_Handler.Instance.getAllTTNVCBB(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd")).Rows.Count.ToString());
+
             if (BLL.BLL_Handler.Instance.getAllTTNVCBB(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd")).Rows.Count > 0 )
             {
                 foreach (DataRow i in BLL.BLL_Handler.Instance.getAllTTNVCBB(Convert.ToDateTime(dtpkDate.Value).ToString("yyMMdd")).Rows)

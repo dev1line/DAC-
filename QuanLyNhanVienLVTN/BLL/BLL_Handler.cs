@@ -175,7 +175,7 @@ namespace QuanLyNhanVienLVTN.BLL
         }
         public DataTable getAllTTNVCBB(string search)
         {
-            return DAO.DataProvider.Instance.ExecuteQuery($"select * from (select  Danhsachnhanvien.ID,Danhsachnhanvien.Name[Tên nhân viên], Danhsachnhom.Nhom[Nhóm], Danhsachnhanvien.ChungChi[Chứng chỉ] from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID  WHERE Danhsachnhanvien.Ngayhethanchungchi > N'{search}') as a left  join (select Ten from Danhsachnhanvien as b1 inner join lichLV as b2 on b1.Name = b2.Ten  WHERE b2.Ngay = N'{search}') as b on a.[Tên nhân viên] = b.Ten where Ten is null");
+            return DAO.DataProvider.Instance.ExecuteQuery($"select * from (select Danhsachnhanvien.ID, Danhsachnhanvien.Name[Tên nhân viên], Danhsachnhom.Nhom[Nhóm], Danhsachnhanvien.ChungChi[Chứng chỉ] from Danhsachnhanvien INNER JOIN Danhsachnhom ON Danhsachnhanvien.NhomID = Danhsachnhom.ID  WHERE Danhsachnhanvien.Ngayhethanchungchi > N'211004') as a left join (select Ten from Danhsachnhanvien as b1 inner join lichLV as b2 on b1.Name = b2.Ten  WHERE b2.Ngay = N'211004') as b on a.[Tên nhân viên] = b.Ten left join  (select QLNgayNghi.NV, QLNgayNghi.Ngay from QLNgayNghi where Ngay = N'211004') as d on a.ID = d.NV where Ten is null and d.Ngay is null");
         }
         public DataTable getAllLichWO(string Ngay)
         {
@@ -274,6 +274,24 @@ namespace QuanLyNhanVienLVTN.BLL
                 return false;
             }
             return true;
+        }
+
+        public DataTable getAllDataNN(string Ngay, string search)
+        {
+            string query = $"select c.ID, c.[Tên nhân viên], c.[Chứng chỉ] , d.Ngay from  (select Danhsachnhanvien.ID, Danhsachnhanvien.Name[Tên nhân viên], Danhsachnhanvien.ChungChi[Chứng chỉ] from Danhsachnhanvien   WHERE Danhsachnhanvien.Ngayhethanchungchi > N'{Ngay}') as c left join (select QLNgayNghi.NV, QLNgayNghi.Ngay from QLNgayNghi where Ngay = N'{Ngay}') as d on c.ID = d.NV";
+            return DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public void AddNN_1day(int NV, string Ngay)
+        {
+            string query = $"insert into QLNgayNghi (NV, Ngay) values({NV}, N'{Ngay}')";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public void DelNN(int NV, string Ngay)
+        {
+            string query = $"delete from QLNgayNghi where NV = {NV} and Ngay = N'{Ngay}' ";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }
