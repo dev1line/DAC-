@@ -213,3 +213,4 @@ D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.exe
 D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\bin\Debug\QuanLyNhanVienLVTN.pdb
 D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.CopyComplete
 D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.AssemblyReference.cache
+D:\C#_DA300\DAC#\QuanLyNhanVienLVTN\obj\Debug\QuanLyNhanVienLVTN.csproj.ResolveComReference.cache

@@ -153,6 +153,7 @@
             this.buttonSL.TabIndex = 12;
             this.buttonSL.Text = "Sao lưu";
             this.buttonSL.UseVisualStyleBackColor = true;
+            this.buttonSL.Click += new System.EventHandler(this.buttonSL_Click);
             // 
             // buttonGBC
             // 

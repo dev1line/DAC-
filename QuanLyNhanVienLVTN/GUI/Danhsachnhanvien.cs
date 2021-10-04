@@ -45,7 +45,7 @@ namespace QuanLyNhanVienLVTN
             
           foreach(DataRow i in BLL.BLL_Handler.Instance.getAllNHOM().Rows)
             {
-                comboBoxNhom.Items.Add(new DTO.CBBItems { Key = i.Field<int>("ID"), Value = i.Field<string>("Nhom") });
+                comboBoxNhom.Items.Add(new DTO.CBBItems { Key = i.Field<int>("ID"), Value = i.Field<string>("Nhóm") });
             }
             comboBoxNhom.SelectedIndex = 0;
         }
