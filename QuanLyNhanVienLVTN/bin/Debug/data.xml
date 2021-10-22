@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-<PlanData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Job>
-    <Planitem>
+<PlanData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:nil="true" />lanitem>
       <Job>Thu nghiem</Job>
       <FromTime>
         <X>4</X>
@@ -11,7 +9,7 @@
         <X>5</X>
         <Y>0</Y>
       </ToTime>
-      <Date>2021-10-04T21:34:47.0278798+07:00</Date>
+      <Date>2021-10-22T12:48:28.8991181+07:00</Date>
     </Planitem>
   </Job>
 </PlanData>

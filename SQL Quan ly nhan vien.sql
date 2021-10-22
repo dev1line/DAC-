@@ -189,6 +189,7 @@ create table lichWO (
 	AC nvarchar(100),
 	MaWO nvarchar(50),
 	noidung nvarchar(500),
+//	deadline nvarchar(50),
 	Chungchi nvarchar(6),
 	Dungcu nvarchar(1000),
 	CCNV char(6),

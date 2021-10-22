@@ -179,7 +179,7 @@ namespace QuanLyNhanVienLVTN.BLL
         }
         public DataTable getAllLichWO(string Ngay)
         {
-            string query = $"SELECT  ID[ID],AC[A/C], MaWO[Mã nội dung], noidung[Nội dung],Dungcu[Dụng cụ], CCNV[Chứng chỉ của nhân viên], NV[Tên nhân viên đảm nhận], Ghichu[Ghi chú] from lichWO where Ngay = '{Ngay}'";
+            string query = $"SELECT ID[ID],AC[A/C], noidung[Nội dung],Dungcu[Dụng cụ], deadline, CCNV[Chứng chỉ của nhân viên], NV[Tên nhân viên đảm nhận], Ghichu[Ghi chú] from lichWO where Ngay = '{Ngay}'";
             return DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         
@@ -227,7 +227,14 @@ namespace QuanLyNhanVienLVTN.BLL
             DAO.DataProvider.Instance.ExecuteQuery(query);
             return true;
         }
-        
+
+        public bool AddDeadline(int pos, string gc)
+        {
+            string query = $"UPDATE lichWO SET deadline = '{gc}' WHERE ID = {pos}";
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+            return true;
+        }
+
         public bool DellichWO_WO(int pos)
         {
             string query = $"DELETE from lichWO WHERE ID = {pos}";

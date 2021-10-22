@@ -50,6 +50,7 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txbTim = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonSaoLuu = new System.Windows.Forms.Button();
             this.buttonXoaNhanVien = new System.Windows.Forms.Button();
             this.textBoxendDay = new System.Windows.Forms.TextBox();
             this.textBoxstartDay = new System.Windows.Forms.TextBox();
@@ -61,6 +62,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonSaoLuuWO = new System.Windows.Forms.Button();
             this.buttonXoaNV = new System.Windows.Forms.Button();
             this.btnXoaWO = new System.Windows.Forms.Button();
             this.buttonNV = new System.Windows.Forms.Button();
@@ -81,9 +83,8 @@
             this.nhanvienTableAdapter = new QuanLyNhanVienLVTN.DataSet1TableAdapters.NhanvienTableAdapter();
             this.thongtinNhanvienTableAdapter = new QuanLyNhanVienLVTN.DataSet1TableAdapters.ThongtinNhanvienTableAdapter();
             this.thongtinNhomTableAdapter = new QuanLyNhanVienLVTN.DataSet1TableAdapters.ThongtinNhomTableAdapter();
-            this.buttonSaoLuu = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.buttonSaoLuuWO = new System.Windows.Forms.Button();
+            this.button1Deadline = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -343,6 +344,20 @@
             this.panel2.Size = new System.Drawing.Size(1316, 56);
             this.panel2.TabIndex = 2;
             // 
+            // buttonSaoLuu
+            // 
+            this.buttonSaoLuu.BackColor = System.Drawing.Color.Yellow;
+            this.buttonSaoLuu.FlatAppearance.BorderSize = 0;
+            this.buttonSaoLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaoLuu.ForeColor = System.Drawing.Color.Black;
+            this.buttonSaoLuu.Location = new System.Drawing.Point(1197, 10);
+            this.buttonSaoLuu.Name = "buttonSaoLuu";
+            this.buttonSaoLuu.Size = new System.Drawing.Size(75, 35);
+            this.buttonSaoLuu.TabIndex = 15;
+            this.buttonSaoLuu.Text = "Sao lưu";
+            this.buttonSaoLuu.UseVisualStyleBackColor = false;
+            this.buttonSaoLuu.Click += new System.EventHandler(this.buttonSaoLuu_Click);
+            // 
             // buttonXoaNhanVien
             // 
             this.buttonXoaNhanVien.BackColor = System.Drawing.Color.Yellow;
@@ -451,6 +466,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.button1Deadline);
             this.panel4.Controls.Add(this.buttonSaoLuuWO);
             this.panel4.Controls.Add(this.buttonXoaNV);
             this.panel4.Controls.Add(this.btnXoaWO);
@@ -466,13 +482,27 @@
             this.panel4.Size = new System.Drawing.Size(1319, 56);
             this.panel4.TabIndex = 0;
             // 
+            // buttonSaoLuuWO
+            // 
+            this.buttonSaoLuuWO.BackColor = System.Drawing.Color.Yellow;
+            this.buttonSaoLuuWO.FlatAppearance.BorderSize = 0;
+            this.buttonSaoLuuWO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaoLuuWO.ForeColor = System.Drawing.Color.Black;
+            this.buttonSaoLuuWO.Location = new System.Drawing.Point(1241, 11);
+            this.buttonSaoLuuWO.Name = "buttonSaoLuuWO";
+            this.buttonSaoLuuWO.Size = new System.Drawing.Size(75, 33);
+            this.buttonSaoLuuWO.TabIndex = 16;
+            this.buttonSaoLuuWO.Text = "Sao lưu";
+            this.buttonSaoLuuWO.UseVisualStyleBackColor = false;
+            this.buttonSaoLuuWO.Click += new System.EventHandler(this.buttonSaoLuuWO_Click);
+            // 
             // buttonXoaNV
             // 
             this.buttonXoaNV.BackColor = System.Drawing.Color.Yellow;
             this.buttonXoaNV.FlatAppearance.BorderSize = 0;
             this.buttonXoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXoaNV.ForeColor = System.Drawing.Color.Black;
-            this.buttonXoaNV.Location = new System.Drawing.Point(802, 7);
+            this.buttonXoaNV.Location = new System.Drawing.Point(772, 7);
             this.buttonXoaNV.Name = "buttonXoaNV";
             this.buttonXoaNV.Size = new System.Drawing.Size(75, 42);
             this.buttonXoaNV.TabIndex = 15;
@@ -486,7 +516,7 @@
             this.btnXoaWO.FlatAppearance.BorderSize = 0;
             this.btnXoaWO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaWO.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaWO.Location = new System.Drawing.Point(397, 12);
+            this.btnXoaWO.Location = new System.Drawing.Point(376, 12);
             this.btnXoaWO.Name = "btnXoaWO";
             this.btnXoaWO.Size = new System.Drawing.Size(75, 33);
             this.btnXoaWO.TabIndex = 14;
@@ -500,7 +530,7 @@
             this.buttonNV.FlatAppearance.BorderSize = 0;
             this.buttonNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNV.ForeColor = System.Drawing.Color.Black;
-            this.buttonNV.Location = new System.Drawing.Point(721, 7);
+            this.buttonNV.Location = new System.Drawing.Point(691, 7);
             this.buttonNV.Name = "buttonNV";
             this.buttonNV.Size = new System.Drawing.Size(75, 42);
             this.buttonNV.TabIndex = 13;
@@ -511,7 +541,7 @@
             // comboBoxNV
             // 
             this.comboBoxNV.FormattingEnabled = true;
-            this.comboBoxNV.Location = new System.Drawing.Point(487, 19);
+            this.comboBoxNV.Location = new System.Drawing.Point(457, 19);
             this.comboBoxNV.Name = "comboBoxNV";
             this.comboBoxNV.Size = new System.Drawing.Size(228, 21);
             this.comboBoxNV.TabIndex = 12;
@@ -522,7 +552,7 @@
             this.buttonGC.FlatAppearance.BorderSize = 0;
             this.buttonGC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGC.ForeColor = System.Drawing.Color.Black;
-            this.buttonGC.Location = new System.Drawing.Point(1117, 11);
+            this.buttonGC.Location = new System.Drawing.Point(1068, 11);
             this.buttonGC.Name = "buttonGC";
             this.buttonGC.Size = new System.Drawing.Size(75, 33);
             this.buttonGC.TabIndex = 11;
@@ -532,9 +562,9 @@
             // 
             // textBoxGC
             // 
-            this.textBoxGC.Location = new System.Drawing.Point(883, 20);
+            this.textBoxGC.Location = new System.Drawing.Point(853, 19);
             this.textBoxGC.Name = "textBoxGC";
-            this.textBoxGC.Size = new System.Drawing.Size(228, 20);
+            this.textBoxGC.Size = new System.Drawing.Size(209, 20);
             this.textBoxGC.TabIndex = 10;
             // 
             // buttonWO
@@ -543,7 +573,7 @@
             this.buttonWO.FlatAppearance.BorderSize = 0;
             this.buttonWO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWO.ForeColor = System.Drawing.Color.Black;
-            this.buttonWO.Location = new System.Drawing.Point(316, 11);
+            this.buttonWO.Location = new System.Drawing.Point(295, 11);
             this.buttonWO.Name = "buttonWO";
             this.buttonWO.Size = new System.Drawing.Size(75, 33);
             this.buttonWO.TabIndex = 9;
@@ -556,8 +586,9 @@
             this.comboBoxWO.FormattingEnabled = true;
             this.comboBoxWO.Location = new System.Drawing.Point(14, 18);
             this.comboBoxWO.Name = "comboBoxWO";
-            this.comboBoxWO.Size = new System.Drawing.Size(296, 21);
+            this.comboBoxWO.Size = new System.Drawing.Size(275, 21);
             this.comboBoxWO.TabIndex = 2;
+            this.comboBoxWO.SelectedIndexChanged += new System.EventHandler(this.comboBoxWO_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -621,33 +652,19 @@
             // 
             this.thongtinNhomTableAdapter.ClearBeforeFill = true;
             // 
-            // buttonSaoLuu
+            // button1Deadline
             // 
-            this.buttonSaoLuu.BackColor = System.Drawing.Color.Yellow;
-            this.buttonSaoLuu.FlatAppearance.BorderSize = 0;
-            this.buttonSaoLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaoLuu.ForeColor = System.Drawing.Color.Black;
-            this.buttonSaoLuu.Location = new System.Drawing.Point(1197, 10);
-            this.buttonSaoLuu.Name = "buttonSaoLuu";
-            this.buttonSaoLuu.Size = new System.Drawing.Size(75, 35);
-            this.buttonSaoLuu.TabIndex = 15;
-            this.buttonSaoLuu.Text = "Sao lưu";
-            this.buttonSaoLuu.UseVisualStyleBackColor = false;
-            this.buttonSaoLuu.Click += new System.EventHandler(this.buttonSaoLuu_Click);
-            // 
-            // buttonSaoLuuWO
-            // 
-            this.buttonSaoLuuWO.BackColor = System.Drawing.Color.Yellow;
-            this.buttonSaoLuuWO.FlatAppearance.BorderSize = 0;
-            this.buttonSaoLuuWO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaoLuuWO.ForeColor = System.Drawing.Color.Black;
-            this.buttonSaoLuuWO.Location = new System.Drawing.Point(1221, 11);
-            this.buttonSaoLuuWO.Name = "buttonSaoLuuWO";
-            this.buttonSaoLuuWO.Size = new System.Drawing.Size(75, 33);
-            this.buttonSaoLuuWO.TabIndex = 16;
-            this.buttonSaoLuuWO.Text = "Sao lưu";
-            this.buttonSaoLuuWO.UseVisualStyleBackColor = false;
-            this.buttonSaoLuuWO.Click += new System.EventHandler(this.buttonSaoLuuWO_Click);
+            this.button1Deadline.BackColor = System.Drawing.Color.Yellow;
+            this.button1Deadline.FlatAppearance.BorderSize = 0;
+            this.button1Deadline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1Deadline.ForeColor = System.Drawing.Color.Black;
+            this.button1Deadline.Location = new System.Drawing.Point(1149, 11);
+            this.button1Deadline.Name = "button1Deadline";
+            this.button1Deadline.Size = new System.Drawing.Size(75, 33);
+            this.button1Deadline.TabIndex = 17;
+            this.button1Deadline.Text = "Deadline";
+            this.button1Deadline.UseVisualStyleBackColor = false;
+            this.button1Deadline.Click += new System.EventHandler(this.button1Deadline_Click);
             // 
             // lsvLenLich
             // 
@@ -744,5 +761,6 @@
         private System.Windows.Forms.Button buttonSaoLuu;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button buttonSaoLuuWO;
+        private System.Windows.Forms.Button button1Deadline;
     }
 }

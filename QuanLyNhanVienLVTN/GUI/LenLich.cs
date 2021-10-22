@@ -60,20 +60,20 @@ namespace QuanLyNhanVienLVTN
             {
                 case "adminroster":
                     {
-                        buttonWO.Enabled = buttonGC.Enabled = buttonGhichu.Enabled = btnXoaWO.Enabled = false;
-                        buttonWO.BackColor = buttonGC.BackColor = buttonGhichu.BackColor = btnXoaWO.BackColor = Color.Gray;
+                        buttonWO.Enabled = buttonGC.Enabled = buttonGhichu.Enabled = btnXoaWO.Enabled  = button1Deadline.Enabled = false;
+                        buttonWO.BackColor = buttonGC.BackColor = buttonGhichu.BackColor = btnXoaWO.BackColor = button1Deadline.BackColor = Color.Gray;
                         break;
                     }
                 case "adminmcc":
                     {
-                        buttonNV.Enabled = buttonGC.Enabled = btnThemNhanVien.Enabled = buttonXoaNhanVien.Enabled  = buttonGhichu.Enabled = false;
-                        buttonNV.BackColor = buttonGC.BackColor = btnThemNhanVien.BackColor = buttonXoaNhanVien.BackColor = buttonGhichu.BackColor = Color.Gray;
+                        buttonNV.Enabled  = btnThemNhanVien.Enabled = buttonXoaNhanVien.Enabled  = buttonGhichu.Enabled  = buttonXoaNV.Enabled = false;
+                        buttonNV.BackColor = btnThemNhanVien.BackColor = buttonXoaNhanVien.BackColor = buttonGhichu.BackColor = buttonXoaNV.BackColor = Color.Gray;
                         break;
                     }
                 case "staff":
                     {
-                        buttonWO.Enabled = buttonNV.Enabled  = buttonXoaNhanVien.Enabled = btnThemNhanVien.Enabled  = btnXoaWO.Enabled = false;
-                        buttonWO.BackColor = buttonNV.BackColor = buttonXoaNhanVien.BackColor = btnThemNhanVien.BackColor = btnXoaWO.BackColor = Color.Gray;
+                        buttonWO.Enabled = buttonNV.Enabled  = buttonXoaNhanVien.Enabled = btnThemNhanVien.Enabled  = btnXoaWO.Enabled = buttonGC.Enabled = buttonXoaNV.Enabled = button1Deadline.Enabled = false;
+                        buttonWO.BackColor = buttonNV.BackColor = buttonGC.BackColor = buttonXoaNhanVien.BackColor = btnThemNhanVien.BackColor = btnXoaWO.BackColor = buttonXoaNV.BackColor = button1Deadline.BackColor = Color.Gray;
                         break;
                     }
             }
@@ -322,7 +322,7 @@ namespace QuanLyNhanVienLVTN
 
         private void buttonGhichu_Click(object sender, EventArgs e)
         {
-            if (textGhiChu.Text != "")
+            if (textGhiChu.Text != "" && itemRow != null)
             {
                 BLL.BLL_Handler.Instance.AddlichLV_GC(Convert.ToInt32(itemRow.Cells[0].Value), textGhiChu.Text);
                 MessageBox.Show("Thêm ghi chú thành công !");
@@ -420,6 +420,25 @@ namespace QuanLyNhanVienLVTN
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ToExcel(dataGridView1, saveFileDialog1.FileName);
+            }
+        }
+
+        private void comboBoxWO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1Deadline_Click(object sender, EventArgs e)
+        {
+            if (textBoxGC.Text != "" && itemRow != null)
+            {
+                BLL.BLL_Handler.Instance.AddDeadline(Convert.ToInt32(itemRow.Cells[0].Value), textBoxGC.Text);
+                MessageBox.Show("Thêm ghi chú thành công !");
+                show("");
+            }
+            else
+            {
+                MessageBox.Show("Không được để trống !");
             }
         }
     }
